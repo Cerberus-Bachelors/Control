@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!--
+    Macro: articulated_leg_macro_2dof_hip
+    Creates a 3-link leg with 3 revolute joints:
+      1) hip_yaw_joint  (parent_link -> small hip_link)
+      2) hip_pitch_joint (hip_link -> upper_leg_link)
+      3) knee_joint      (upper_leg_link -> lower_leg_link)
+
+    "Both ways at the hip" → 2 DOFs at the hip
+      hip_yaw_axis and hip_pitch_axis 
+    By default, no foot link. The "lower_leg_link" is the last link.
+  -->
+    <xacro:macro name="articulated_leg_macro_2dof_hip"
+        params="
+      leg_name
+      parent_link
+
+      hip_yaw_axis:='0 0 1'
+      hip_pitch_axis:='0 1 0'
+      knee_axis:='0 1 0'
+
+      hip_yaw_effort:=50.0
+      hip_pitch_effort:=50.0
+      knee_effort:=50.0
+
+      hip_yaw_range:='-0.5 0.5'
+      hip_pitch_range:='-1.57 1.57'
+      knee_range:='0 2.0'
+
+      hip_link_length:=0.05
+      hip_link_radius:=0.02
+      hip_link_mass:=0.2
+
+      upper_leg_length:=0.3
+      upper_leg_radius:=0.03
+      upper_leg_mass:=1.0
+
+      lower_leg_length:=0.3
+      lower_leg_radius:=0.03
+      lower_leg_mass:=1.0
+  ">
+
+        <link name="${leg_name}_hip_link">
+            <!-- A small cylinder (height=hip_link_length, radius=hip_link_radius) -->
+            <visual>
+                <origin xyz="0 0 ${hip_link_length/2}" />
+                <geometry>
+                    <cylinder length="${hip_link_length}" radius="${hip_link_radius}" />
+                </geometry>
+                <material name="dark_gray">
+                    <color rgba="0.4 0.4 0.4 1" />
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0 0 ${hip_link_length/2}" />
+                <geometry>
+                    <cylinder length="${hip_link_length}" radius="${hip_link_radius}" />
+                </geometry>
+            </collision>
+            <inertial>
+                <origin xyz="0 0 ${hip_link_length/2}" />
+                <mass value="${hip_link_mass}" />
+                <inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+            </inertial>
+        </link>
+
+        <joint name="${leg_name}_hip_yaw_joint" type="revolute">
+            <!-- Usually place at parent_link's origin or offset if needed -->
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <parent link="${parent_link}" />
+            <child link="${leg_name}_hip_link" />
+            <axis xyz="${hip_yaw_axis}" />
+            <limit
+                effort="${hip_yaw_effort}"
+                velocity="2.0"
+                lower="$(arg hip_yaw_range)[:-1]" 
+            upper="$(arg hip_yaw_range)[-1:]"  
+            />
+        </joint>
+
+        <link name="${leg_name}_upper_leg_link">
+            <visual>
+                <origin xyz="0 0 ${upper_leg_length/2}" />
+                <geometry>
+                    <cylinder length="${upper_leg_length}" radius="${upper_leg_radius}" />
+                </geometry>
+                <material name="gray">
+                    <color rgba="0.7 0.7 0.7 1" />
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0 0 ${upper_leg_length/2}" />
+                <geometry>
+                    <cylinder length="${upper_leg_length}" radius="${upper_leg_radius}" />
+                </geometry>
+            </collision>
+            <inertial>
+                <origin xyz="0 0 ${upper_leg_length/2}" />
+                <mass value="${upper_leg_mass}" />
+                <inertia ixx="0.01" iyy="0.01" izz="0.01" ixy="0" ixz="0" iyz="0" />
+            </inertial>
+        </link>
+
+        <joint name="${leg_name}_hip_pitch_joint" type="revolute">
+            <origin xyz="0 0 ${hip_link_length}" rpy="0 0 0" />
+            <parent link="${leg_name}_hip_link" />
+            <child link="${leg_name}_upper_leg_link" />
+            <axis xyz="${hip_pitch_axis}" />
+            <limit
+                effort="${hip_pitch_effort}"
+                velocity="2.0"
+                lower="$(arg hip_pitch_range)[:-1]"
+                upper="$(arg hip_pitch_range)[-1:]"
+            />
+        </joint>
+
+        <link name="${leg_name}_lower_leg_link">
+            <visual>
+                <origin xyz="0 0 ${lower_leg_length/2}" />
+                <geometry>
+                    <cylinder length="${lower_leg_length}" radius="${lower_leg_radius}" />
+                </geometry>
+                <material name="gray">
+                    <color rgba="0.8 0.8 0.8 1" />
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0 0 ${lower_leg_length/2}" />
+                <geometry>
+                    <cylinder length="${lower_leg_length}" radius="${lower_leg_radius}" />
+                </geometry>
+            </collision>
+            <inertial>
+                <origin xyz="0 0 ${lower_leg_length/2}" />
+                <mass value="${lower_leg_mass}" />
+                <inertia ixx="0.005" iyy="0.005" izz="0.005" ixy="0" ixz="0" iyz="0" />
+            </inertial>
+        </link>
+
+        <!-- 3a) KNEE JOINT: upper_leg_link → lower_leg_link -->
+        <joint name="${leg_name}_knee_joint" type="revolute">
+            <origin xyz="0 0 ${upper_leg_length}" rpy="0 0 0" />
+            <parent link="${leg_name}_upper_leg_link" />
+            <child link="${leg_name}_lower_leg_link" />
+            <axis xyz="${knee_axis}" />
+            <limit
+                effort="${knee_effort}"
+                velocity="2.0"
+                lower="$(arg knee_range)[:-1]"
+                upper="$(arg knee_range)[-1:]"
+            />
+            <!-- e.g. lower="0" upper="2.0" for a typical knee that folds forward -->
+        </joint>
+
+    </xacro:macro>
+</robot>

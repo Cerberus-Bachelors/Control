@@ -1,0 +1,25 @@
+[0.015s] Invoking command in '/home/v/cerberus_ws/build/cerberus_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/v/cerberus_ws/build/cerberus_description -- -j12 -l12
+[0.033s] Invoked command in '/home/v/cerberus_ws/build/cerberus_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/v/cerberus_ws/build/cerberus_description -- -j12 -l12
+[0.039s] Invoking command in '/home/v/cerberus_ws/build/cerberus_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/v/cerberus_ws/build/cerberus_description
+[0.042s] -- Install configuration: ""
+[0.042s] -- Up-to-date: /home/v/cerberus_ws/install/cerberus_description/share/cerberus_description/urdf
+[0.042s] -- Installing: /home/v/cerberus_ws/install/cerberus_description/share/cerberus_description/urdf/cerbiboi.urdf.xacro
+[0.042s] -- Up-to-date: /home/v/cerberus_ws/install/cerberus_description/share/cerberus_description/urdf/cerberus_odrive.urdf.xacro
+[0.042s] -- Up-to-date: /home/v/cerberus_ws/install/cerberus_description/share/cerberus_description/urdf/leg_macro.xacro
+[0.043s] -- Up-to-date: /home/v/cerberus_ws/install/cerberus_description/share/cerberus_description/urdf/odrive.ros2_control.xacro
+[0.043s] -- Up-to-date: /home/v/cerberus_ws/install/cerberus_description/share/ament_index/resource_index/package_run_dependencies/cerberus_description
+[0.043s] -- Up-to-date: /home/v/cerberus_ws/install/cerberus_description/share/ament_index/resource_index/parent_prefix_path/cerberus_description
+[0.043s] -- Up-to-date: /home/v/cerberus_ws/install/cerberus_description/share/cerberus_description/environment/ament_prefix_path.sh
+[0.043s] -- Up-to-date: /home/v/cerberus_ws/install/cerberus_description/share/cerberus_description/environment/ament_prefix_path.dsv
+[0.043s] -- Up-to-date: /home/v/cerberus_ws/install/cerberus_description/share/cerberus_description/environment/path.sh
+[0.043s] -- Up-to-date: /home/v/cerberus_ws/install/cerberus_description/share/cerberus_description/environment/path.dsv
+[0.043s] -- Up-to-date: /home/v/cerberus_ws/install/cerberus_description/share/cerberus_description/local_setup.bash
+[0.043s] -- Up-to-date: /home/v/cerberus_ws/install/cerberus_description/share/cerberus_description/local_setup.sh
+[0.043s] -- Up-to-date: /home/v/cerberus_ws/install/cerberus_description/share/cerberus_description/local_setup.zsh
+[0.043s] -- Up-to-date: /home/v/cerberus_ws/install/cerberus_description/share/cerberus_description/local_setup.dsv
+[0.043s] -- Installing: /home/v/cerberus_ws/install/cerberus_description/share/cerberus_description/package.dsv
+[0.043s] -- Up-to-date: /home/v/cerberus_ws/install/cerberus_description/share/ament_index/resource_index/packages/cerberus_description
+[0.043s] -- Up-to-date: /home/v/cerberus_ws/install/cerberus_description/share/cerberus_description/cmake/cerberus_descriptionConfig.cmake
+[0.044s] -- Up-to-date: /home/v/cerberus_ws/install/cerberus_description/share/cerberus_description/cmake/cerberus_descriptionConfig-version.cmake
+[0.044s] -- Up-to-date: /home/v/cerberus_ws/install/cerberus_description/share/cerberus_description/package.xml
+[0.045s] Invoked command in '/home/v/cerberus_ws/build/cerberus_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/v/cerberus_ws/build/cerberus_description

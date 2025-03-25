@@ -1,6 +1,0 @@
-Invoking command in '/home/v/cerberus_ws/build/cerberus_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/v/cerberus_ws/src/cerberus_final/cerberus_description -DCMAKE_INSTALL_PREFIX=/home/v/cerberus_ws/install/cerberus_description
-Invoked command in '/home/v/cerberus_ws/build/cerberus_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/v/cerberus_ws/src/cerberus_final/cerberus_description -DCMAKE_INSTALL_PREFIX=/home/v/cerberus_ws/install/cerberus_description
-Invoking command in '/home/v/cerberus_ws/build/cerberus_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/v/cerberus_ws/build/cerberus_description -- -j12 -l12
-Invoked command in '/home/v/cerberus_ws/build/cerberus_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/v/cerberus_ws/build/cerberus_description -- -j12 -l12
-Invoking command in '/home/v/cerberus_ws/build/cerberus_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/v/cerberus_ws/build/cerberus_description
-Invoked command in '/home/v/cerberus_ws/build/cerberus_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/v/cerberus_ws/build/cerberus_description

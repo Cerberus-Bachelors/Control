@@ -1,2 +1,1 @@
-source;share/cerberus_bringup/environment/ament_prefix_path.sh
-source;share/cerberus_bringup/environment/path.sh
+/home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_bringup/ament_cmake_environment_hooks/local_setup.dsv

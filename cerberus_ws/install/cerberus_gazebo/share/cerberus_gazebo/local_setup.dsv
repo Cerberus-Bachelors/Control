@@ -1,4 +1,1 @@
-source;share/cerberus_gazebo/environment/ament_prefix_path.sh
-source;share/cerberus_gazebo/environment/cerberus_gazebo.sh
-source;share/cerberus_gazebo/environment/path.sh
-source;share/cerberus_gazebo/environment/cerberus_gazebo.dsv
+/home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_gazebo/ament_cmake_environment_hooks/local_setup.dsv

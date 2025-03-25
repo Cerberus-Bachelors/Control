@@ -1,0 +1,37 @@
+[0.633s] Invoking command in '/home/v/Dev/Github/Cerberus/Control/cerberus_ws/src/cerberus_leg_loop': PYTHONPATH=/home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_leg_loop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_leg_loop/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/cerberus_leg_loop build --build-base /home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_leg_loop/build install --record /home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_leg_loop/install.log --single-version-externally-managed install_data
+[0.799s] running egg_info
+[0.799s] creating ../../build/cerberus_leg_loop/cerberus_leg_loop.egg-info
+[0.800s] writing ../../build/cerberus_leg_loop/cerberus_leg_loop.egg-info/PKG-INFO
+[0.800s] writing dependency_links to ../../build/cerberus_leg_loop/cerberus_leg_loop.egg-info/dependency_links.txt
+[0.800s] writing entry points to ../../build/cerberus_leg_loop/cerberus_leg_loop.egg-info/entry_points.txt
+[0.800s] writing requirements to ../../build/cerberus_leg_loop/cerberus_leg_loop.egg-info/requires.txt
+[0.800s] writing top-level names to ../../build/cerberus_leg_loop/cerberus_leg_loop.egg-info/top_level.txt
+[0.801s] writing manifest file '../../build/cerberus_leg_loop/cerberus_leg_loop.egg-info/SOURCES.txt'
+[0.801s] reading manifest file '../../build/cerberus_leg_loop/cerberus_leg_loop.egg-info/SOURCES.txt'
+[0.802s] writing manifest file '../../build/cerberus_leg_loop/cerberus_leg_loop.egg-info/SOURCES.txt'
+[0.802s] running build
+[0.802s] running build_py
+[0.802s] creating /home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_leg_loop/build
+[0.802s] creating /home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_leg_loop/build/lib
+[0.802s] creating /home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_leg_loop/build/lib/cerberus_leg_loop
+[0.802s] copying cerberus_leg_loop/__init__.py -> /home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_leg_loop/build/lib/cerberus_leg_loop
+[0.802s] copying cerberus_leg_loop/RepeatingTrajectoryNode.py -> /home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_leg_loop/build/lib/cerberus_leg_loop
+[0.802s] running install
+[0.802s] running install_lib
+[0.803s] creating /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_leg_loop/lib/python3.10/site-packages/cerberus_leg_loop
+[0.803s] copying /home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_leg_loop/build/lib/cerberus_leg_loop/__init__.py -> /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_leg_loop/lib/python3.10/site-packages/cerberus_leg_loop
+[0.803s] copying /home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_leg_loop/build/lib/cerberus_leg_loop/RepeatingTrajectoryNode.py -> /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_leg_loop/lib/python3.10/site-packages/cerberus_leg_loop
+[0.803s] byte-compiling /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_leg_loop/lib/python3.10/site-packages/cerberus_leg_loop/__init__.py to __init__.cpython-310.pyc
+[0.803s] byte-compiling /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_leg_loop/lib/python3.10/site-packages/cerberus_leg_loop/RepeatingTrajectoryNode.py to RepeatingTrajectoryNode.cpython-310.pyc
+[0.804s] running install_data
+[0.804s] creating /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_leg_loop/share/ament_index
+[0.804s] creating /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_leg_loop/share/ament_index/resource_index
+[0.804s] creating /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_leg_loop/share/ament_index/resource_index/packages
+[0.804s] copying resource/cerberus_leg_loop -> /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_leg_loop/share/ament_index/resource_index/packages
+[0.804s] copying package.xml -> /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_leg_loop/share/cerberus_leg_loop
+[0.804s] running install_egg_info
+[0.805s] Copying ../../build/cerberus_leg_loop/cerberus_leg_loop.egg-info to /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_leg_loop/lib/python3.10/site-packages/cerberus_leg_loop-0.0.0-py3.10.egg-info
+[0.806s] running install_scripts
+[0.820s] Installing RepeatingTrajectoryNode script to /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_leg_loop/lib/cerberus_leg_loop
+[0.820s] writing list of installed files to '/home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_leg_loop/install.log'
+[0.837s] Invoked command in '/home/v/Dev/Github/Cerberus/Control/cerberus_ws/src/cerberus_leg_loop' returned '0': PYTHONPATH=/home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_leg_loop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_leg_loop/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/cerberus_leg_loop build --build-base /home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_leg_loop/build install --record /home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_leg_loop/install.log --single-version-externally-managed install_data

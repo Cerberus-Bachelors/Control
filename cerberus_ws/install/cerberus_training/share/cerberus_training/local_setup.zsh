@@ -1,0 +1,1 @@
+/home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_training/ament_cmake_environment_hooks/local_setup.zsh

@@ -43,11 +43,17 @@ def generate_launch_description():
             default_value="true",
         )
     )
+    declared_arguments.append(
+        DeclareLaunchArgument(
+            "enable_joint3",
+            default_value="false",
+        )
+    )
 
     declared_arguments.append(
         DeclareLaunchArgument(
             "group_controller",
-            default_value="group_position_controller",
+            default_value="joint_trajectory_controller",
         )
     )
 
@@ -83,7 +89,7 @@ def generate_launch_description():
                 [
                     FindPackageShare("cerberus_description"),
                     "urdf",
-                    "cerberus.urdf.xacro",
+                    "cerberus_single_leg.urdf.xacro",
                 ]
             ),
             " ",
@@ -93,7 +99,7 @@ def generate_launch_description():
             "enable_joint1:=",
             enable_joint1,
             " ",
-            "enable_joint1:=",
+            "enable_joint2:=",
             enable_joint2,
             " ",
             "odrive_1_serial:=",
@@ -109,7 +115,7 @@ def generate_launch_description():
         [
             FindPackageShare("cerberus_bringup"),
             "config",
-            "cerberus.yaml",
+            "cerberus_single_leg.yaml",
         ]
     )
 

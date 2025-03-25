@@ -1,2 +1,1 @@
-prepend-non-duplicate;IGN_GAZEBO_RESOURCE_PATH;share/cerberus_gazebo/worlds
-prepend-non-duplicate;IGN_GAZEBO_SYSTEM_PLUGIN_PATH;lib/cerberus_gazebo/
+/home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_gazebo/ament_cmake_environment_hooks/cerberus_gazebo.dsv

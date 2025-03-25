@@ -1,37 +1,46 @@
 import os
 
 from ament_index_python.packages import get_package_share_directory
-
-from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument
-
-from launch.actions import IncludeLaunchDescription
-from launch.conditions import IfCondition
-from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
-from launch_ros.parameter_descriptions import ParameterValue
-from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument
-from launch.conditions import IfCondition
-from launch.substitutions import Command, FindExecutable, LaunchConfiguration, PathJoinSubstitution
-from launch_ros.parameter_descriptions import ParameterValue
-from ament_index_python.packages import get_package_share_directory
-from launch_ros.actions import Node
-from launch_ros.substitutions import FindPackageShare
-import os
 import xacro
 
+from launch import LaunchDescription
+
+from launch.actions import IncludeLaunchDescription
+from launch.actions import DeclareLaunchArgument
+
+from launch_ros.parameter_descriptions import ParameterValue
 from launch_ros.actions import Node
+from launch_ros.substitutions import FindPackageShare
+
+from launch.conditions import IfCondition
+
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import Command, FindExecutable, LaunchConfiguration, PathJoinSubstitution
+
+
 
 
 def generate_launch_description():
+
+    declared_arguments = []
+    declared_arguments.append(
+        DeclareLaunchArgument(
+            "joint_controller",
+            default_value="joint_trajectory_controller",
+        )
+    )
+
+    declared_arguments.append(
+        DeclareLaunchArgument(
+            "pos_controller",
+            default_value="group_position_controller",
+        )
+    )
 
     bringup = get_package_share_directory('cerberus_bringup')
     gazebo = get_package_share_directory('cerberus_gazebo')
     description = get_package_share_directory('cerberus_description')
     gz_sim = get_package_share_directory('ros_gz_sim')
-
-    group_controller = LaunchConfiguration("group_controller")
 
     robot_desc_path = os.path.join(
         description,
@@ -39,12 +48,16 @@ def generate_launch_description():
         "cerbiboi.urdf.xacro"
     )
 
+    joint_controller = LaunchConfiguration("joint_controller")
+    pos_controller = LaunchConfiguration("pos_controller")
+
     urdf = xacro.process_file(robot_desc_path).toxml()
 
     gz_sim = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(gz_sim, 'launch', 'gz_sim.launch.py')),
         launch_arguments={'gz_args': PathJoinSubstitution([
+            '-r',
             gazebo,
             'worlds',
             'cerberus.sdf'
@@ -96,18 +109,19 @@ def generate_launch_description():
         arguments=["joint_state_broadcaster", "-c", "/controller_manager"],
     )
     
-    #group_controller_spawner = Node(
-    #    package="controller_manager",
-    #    executable="spawner",
-    #    arguments=["group_position_controller", "-c", "/controller_manager"],
-    #)
-    group_effort_spawner = Node(
+    joint_controller_spawner = Node(
         package="controller_manager",
         executable="spawner",
-        arguments=["group_effort_controller", "-c", "/controller_manager"],
+        arguments=[joint_controller, "-c", "/controller_manager"],
     )
 
-    return LaunchDescription([
+    pos_controller_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=[pos_controller, "-c", "/controller_manager"],
+    )
+
+    nodes = [
         gz_sim,
         spawn_robot,
         DeclareLaunchArgument('rviz', default_value='true',
@@ -115,6 +129,8 @@ def generate_launch_description():
         bridge,
         robot_state_publisher,
         rviz,
-        group_effort_spawner,
+        pos_controller_spawner,
         joint_state_broadcaster_spawner,
-    ])
+    ]
+
+    return LaunchDescription(declared_arguments + nodes)

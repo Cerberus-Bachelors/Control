@@ -18,7 +18,7 @@ time.sleep(5)
 print("Finding ODrive...")
 odrv0 = odrive.find_any()
 
-odrv0.config.dc_max_positive_current = 20.0
+odrv0.config.dc_max_positive_current = 40.0
 odrv0.config.dc_max_negative_current = -10
 
 

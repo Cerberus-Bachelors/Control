@@ -1,0 +1,259 @@
+[0.010s] Invoking command in '/home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_gazebo': CMAKE_PREFIX_PATH=/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_description:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/odrive_hardware_interface:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_training:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_gazebo:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_bringup:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_leg_loop:/opt/ros/humble /usr/bin/cmake /home/v/Dev/Github/Cerberus/Control/cerberus_ws/src/cerberus/cerberus_gazebo -DCMAKE_INSTALL_PREFIX=/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_gazebo
+[0.061s] -- The C compiler identification is GNU 11.4.0
+[0.105s] -- The CXX compiler identification is GNU 11.4.0
+[0.112s] -- Detecting C compiler ABI info
+[0.159s] -- Detecting C compiler ABI info - done
+[0.165s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.165s] -- Detecting C compile features
+[0.165s] -- Detecting C compile features - done
+[0.168s] -- Detecting CXX compiler ABI info
+[0.223s] -- Detecting CXX compiler ABI info - done
+[0.229s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.229s] -- Detecting CXX compile features
+[0.229s] -- Detecting CXX compile features - done
+[0.231s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.316s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.384s] -- Found cerberus_description: 0.1.0 (/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_description/share/cerberus_description/cmake)
+[0.391s] -- Looking for ignition-plugin1 -- found version 1.4.0
+[0.391s] -- Searching for dependencies of ignition-plugin1
+[0.392s] -- Searching for <ignition-plugin1> component [register]
+[0.393s] -- Looking for ignition-plugin1-register -- found version 1.4.0
+[0.394s] -- Searching for dependencies of ignition-plugin1-register
+[0.396s] -- Looking for ignition-common4 -- found version 4.7.0
+[0.396s] -- Searching for dependencies of ignition-common4
+[0.397s] -- Looking for dlfcn.h - found
+[0.403s] -- Looking for libdl - found
+[0.404s] -- Found DL: TRUE  
+[0.408s] -- Checking for module 'uuid'
+[0.419s] --   Found uuid, version 2.37.2
+[0.443s] -- Found UUID: TRUE  
+[0.444s] -- Searching for <ignition-common4> component [profiler]
+[0.446s] -- Looking for ignition-common4-profiler -- found version 4.7.0
+[0.446s] -- Searching for dependencies of ignition-common4-profiler
+[0.452s] -- Looking for ignition-gazebo6 -- found version 6.16.0
+[0.453s] -- Searching for dependencies of ignition-gazebo6
+[0.455s] -- Looking for sdformat12 -- found version 12.7.2
+[0.455s] -- Searching for dependencies of sdformat12
+[0.459s] -- Checking for module 'tinyxml2'
+[0.467s] --   Found tinyxml2, version 9.0.0
+[0.490s] -- Looking for ignition-math6 -- found version 6.15.1
+[0.490s] -- Searching for dependencies of ignition-math6
+[0.493s] -- Looking for ignition-utils1 -- found version 1.5.1
+[0.493s] -- Searching for dependencies of ignition-utils1
+[0.494s] -- Looking for ignition-plugin1 -- found version 1.4.0
+[0.494s] -- Searching for dependencies of ignition-plugin1
+[0.494s] -- Searching for <ignition-plugin1> component [loader]
+[0.496s] -- Looking for ignition-plugin1-loader -- found version 1.4.0
+[0.497s] -- Searching for dependencies of ignition-plugin1-loader
+[0.497s] -- Searching for <ignition-plugin1> component [register]
+[0.499s] -- Looking for ignition-transport11 -- found version 11.4.1
+[0.500s] -- Searching for dependencies of ignition-transport11
+[0.573s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") 
+[0.584s] -- Config-file not installed for ZeroMQ -- checking for pkg-config
+[0.588s] -- Checking for module 'libzmq >= 4'
+[0.598s] --   Found libzmq , version 4.3.4
+[0.624s] -- Found ZeroMQ: TRUE (Required is at least version "4") 
+[0.635s] -- Looking for ignition-utils1 -- found version 1.5.1
+[0.636s] -- Searching for dependencies of ignition-utils1
+[0.636s] -- Searching for <ignition-utils1> component [cli]
+[0.638s] -- Looking for ignition-utils1-cli -- found version 1.5.1
+[0.638s] -- Searching for dependencies of ignition-utils1-cli
+[0.641s] -- Looking for ignition-msgs8 -- found version 8.7.0
+[0.641s] -- Searching for dependencies of ignition-msgs8
+[0.658s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found suitable version "3.12.4", minimum required is "3") 
+[0.659s] -- Looking for ignition-math6 -- found version 6.15.1
+[0.666s] -- Searching for <ignition-transport11> component [log]
+[0.669s] -- Looking for ignition-transport11-log -- found version 11.4.1
+[0.669s] -- Searching for dependencies of ignition-transport11-log
+[0.669s] -- Searching for <ignition-transport11> component [parameters]
+[0.672s] -- Looking for ignition-transport11-parameters -- found version 11.4.1
+[0.672s] -- Searching for dependencies of ignition-transport11-parameters
+[0.673s] -- Looking for ignition-msgs8 -- found version 8.7.0
+[0.673s] -- Looking for ignition-common4 -- found version 4.7.0
+[0.674s] -- Searching for dependencies of ignition-common4
+[0.674s] -- Looking for dlfcn.h - found
+[0.674s] -- Looking for libdl - found
+[0.682s] -- Searching for <ignition-common4> component [profiler]
+[0.682s] -- Searching for <ignition-common4> component [events]
+[0.684s] -- Looking for ignition-common4-events -- found version 4.7.0
+[0.685s] -- Searching for dependencies of ignition-common4-events
+[0.685s] -- Looking for ignition-math6 -- found version 6.15.1
+[0.685s] -- Searching for <ignition-common4> component [av]
+[0.687s] -- Looking for ignition-common4-av -- found version 4.7.0
+[0.688s] -- Searching for dependencies of ignition-common4-av
+[0.691s] -- Checking for module 'libswscale'
+[0.701s] --   Found libswscale, version 5.9.100
+[0.728s] -- Found SWSCALE: TRUE  
+[0.733s] -- Checking for module 'libavdevice >= 56.4.100'
+[0.744s] --   Found libavdevice , version 58.13.100
+[0.772s] -- Found AVDEVICE: TRUE (Required is at least version "56.4.100") 
+[0.777s] -- Checking for module 'libavformat'
+[0.788s] --   Found libavformat, version 58.76.100
+[0.814s] -- Found AVFORMAT: TRUE  
+[0.818s] -- Checking for module 'libavcodec'
+[0.829s] --   Found libavcodec, version 58.134.100
+[0.857s] -- Found AVCODEC: TRUE  
+[0.861s] -- Checking for module 'libavutil'
+[0.871s] --   Found libavutil, version 56.70.100
+[0.897s] -- Found AVUTIL: TRUE  
+[0.899s] -- Looking for ignition-fuel_tools7 -- found version 7.3.0
+[0.899s] -- Searching for dependencies of ignition-fuel_tools7
+[0.967s] -- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "7.81.0")  
+[0.974s] -- Checking for module 'jsoncpp'
+[0.985s] --   Found jsoncpp, version 1.9.5
+[1.013s] -- Found JSONCPP: TRUE  
+[1.018s] -- Checking for module 'libzip'
+[1.029s] --   Found libzip, version 1.7.3
+[1.057s] -- Found ZIP: TRUE  
+[1.057s] -- Looking for ignition-common4 -- found version 4.7.0
+[1.058s] -- Looking for ignition-math6 -- found version 6.15.1
+[1.058s] -- Looking for ignition-msgs8 -- found version 8.7.0
+[1.062s] -- Looking for ignition-gui6 -- found version 6.8.0
+[1.062s] -- Searching for dependencies of ignition-gui6
+[1.087s] -- Looking for ignition-math6 -- found version 6.15.1
+[1.087s] -- Looking for ignition-common4 -- found version 4.7.0
+[1.087s] -- Looking for ignition-plugin1 -- found version 1.4.0
+[1.087s] -- Looking for ignition-transport11 -- found version 11.4.1
+[1.090s] -- Looking for ignition-rendering6 -- found version 6.6.3
+[1.090s] -- Searching for dependencies of ignition-rendering6
+[1.091s] -- Looking for ignition-math6 -- found version 6.15.1
+[1.091s] -- Searching for dependencies of ignition-math6
+[1.091s] -- Searching for <ignition-math6> component [eigen3]
+[1.093s] -- Looking for ignition-math6-eigen3 -- found version 6.15.1
+[1.094s] -- Searching for dependencies of ignition-math6-eigen3
+[1.102s] -- Looking for ignition-common4 -- found version 4.7.0
+[1.102s] -- Searching for dependencies of ignition-common4
+[1.102s] -- Looking for dlfcn.h - found
+[1.102s] -- Looking for libdl - found
+[1.111s] -- Searching for <ignition-common4> component [graphics]
+[1.113s] -- Looking for ignition-common4-graphics -- found version 4.7.0
+[1.113s] -- Searching for dependencies of ignition-common4-graphics
+[1.114s] -- Looking for ignition-math6 -- found version 6.15.1
+[1.114s] -- Looking for ignition-utils1 -- found version 1.5.1
+[1.115s] -- Searching for <ignition-common4> component [events]
+[1.115s] -- Looking for ignition-plugin1 -- found version 1.4.0
+[1.115s] -- Searching for dependencies of ignition-plugin1
+[1.116s] -- Searching for <ignition-plugin1> component [all]
+[1.118s] -- Looking for all libraries of ignition-plugin1 -- found version 1.4.0
+[1.118s] -- Looking for ignition-plugin1 -- found version 1.4.0
+[1.120s] -- Looking for ignition-msgs8 -- found version 8.7.0
+[1.144s] -- Looking for ignition-physics5 -- found version 5.3.2
+[1.144s] -- Searching for dependencies of ignition-physics5
+[1.144s] -- Looking for ignition-math6 -- found version 6.15.1
+[1.145s] -- Looking for ignition-plugin1 -- found version 1.4.0
+[1.145s] -- Looking for ignition-utils1 -- found version 1.5.1
+[1.146s] -- Searching for <ignition-physics5> component [heightmap]
+[1.148s] -- Looking for ignition-physics5-heightmap -- found version 5.3.2
+[1.148s] -- Searching for dependencies of ignition-physics5-heightmap
+[1.149s] -- Looking for ignition-common4 -- found version 4.7.0
+[1.149s] -- Searching for <ignition-physics5> component [mesh]
+[1.151s] -- Looking for ignition-physics5-mesh -- found version 5.3.2
+[1.151s] -- Searching for dependencies of ignition-physics5-mesh
+[1.152s] -- Looking for ignition-common4 -- found version 4.7.0
+[1.152s] -- Searching for <ignition-physics5> component [sdf]
+[1.154s] -- Looking for ignition-physics5-sdf -- found version 5.3.2
+[1.154s] -- Searching for dependencies of ignition-physics5-sdf
+[1.155s] -- Looking for sdformat12 -- found version 12.7.2
+[1.158s] -- Looking for ignition-sensors6 -- found version 6.8.0
+[1.158s] -- Searching for dependencies of ignition-sensors6
+[1.176s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") 
+[1.177s] -- Looking for ignition-math6 -- found version 6.15.1
+[1.178s] -- Looking for ignition-common4 -- found version 4.7.0
+[1.178s] -- Looking for ignition-transport11 -- found version 11.4.1
+[1.179s] -- Looking for ignition-rendering6 -- found version 6.6.3
+[1.179s] -- Looking for ignition-msgs8 -- found version 8.7.0
+[1.180s] -- Looking for sdformat12 -- found version 12.7.2
+[1.180s] -- Searching for <ignition-sensors6> component [air_pressure]
+[1.183s] -- Looking for ignition-sensors6-air_pressure -- found version 6.8.0
+[1.183s] -- Searching for dependencies of ignition-sensors6-air_pressure
+[1.183s] -- Searching for <ignition-sensors6> component [altimeter]
+[1.185s] -- Looking for ignition-sensors6-altimeter -- found version 6.8.0
+[1.186s] -- Searching for dependencies of ignition-sensors6-altimeter
+[1.186s] -- Searching for <ignition-sensors6> component [imu]
+[1.189s] -- Looking for ignition-sensors6-imu -- found version 6.8.0
+[1.189s] -- Searching for dependencies of ignition-sensors6-imu
+[1.189s] -- Searching for <ignition-sensors6> component [force_torque]
+[1.191s] -- Looking for ignition-sensors6-force_torque -- found version 6.8.0
+[1.192s] -- Searching for dependencies of ignition-sensors6-force_torque
+[1.192s] -- Searching for <ignition-sensors6> component [logical_camera]
+[1.194s] -- Looking for ignition-sensors6-logical_camera -- found version 6.8.0
+[1.194s] -- Searching for dependencies of ignition-sensors6-logical_camera
+[1.195s] -- Searching for <ignition-sensors6> component [magnetometer]
+[1.197s] -- Looking for ignition-sensors6-magnetometer -- found version 6.8.0
+[1.197s] -- Searching for dependencies of ignition-sensors6-magnetometer
+[1.197s] -- Searching for <ignition-sensors6> component [navsat]
+[1.199s] -- Looking for ignition-sensors6-navsat -- found version 6.8.0
+[1.200s] -- Searching for dependencies of ignition-sensors6-navsat
+[1.200s] -- Searching for <ignition-sensors6> component [rendering]
+[1.202s] -- Looking for ignition-sensors6-rendering -- found version 6.8.0
+[1.202s] -- Searching for dependencies of ignition-sensors6-rendering
+[1.203s] -- Searching for <ignition-sensors6> component [lidar]
+[1.205s] -- Looking for ignition-sensors6-lidar -- found version 6.8.0
+[1.205s] -- Searching for dependencies of ignition-sensors6-lidar
+[1.206s] -- Looking for ignition-sensors6 -- found version 6.8.0
+[1.206s] -- Searching for <ignition-sensors6> component [gpu_lidar]
+[1.208s] -- Looking for ignition-sensors6-gpu_lidar -- found version 6.8.0
+[1.209s] -- Searching for dependencies of ignition-sensors6-gpu_lidar
+[1.209s] -- Looking for ignition-sensors6 -- found version 6.8.0
+[1.209s] -- Searching for <ignition-sensors6> component [camera]
+[1.212s] -- Looking for ignition-sensors6-camera -- found version 6.8.0
+[1.213s] -- Searching for dependencies of ignition-sensors6-camera
+[1.213s] -- Looking for ignition-sensors6 -- found version 6.8.0
+[1.213s] -- Searching for <ignition-sensors6> component [boundingbox_camera]
+[1.216s] -- Looking for ignition-sensors6-boundingbox_camera -- found version 6.8.0
+[1.217s] -- Searching for dependencies of ignition-sensors6-boundingbox_camera
+[1.221s] -- Searching for <ignition-sensors6> component [segmentation_camera]
+[1.221s] -- Looking for ignition-sensors6-segmentation_camera -- found version 6.8.0
+[1.221s] -- Searching for dependencies of ignition-sensors6-segmentation_camera
+[1.221s] -- Searching for <ignition-sensors6> component [depth_camera]
+[1.224s] -- Looking for ignition-sensors6-depth_camera -- found version 6.8.0
+[1.224s] -- Searching for dependencies of ignition-sensors6-depth_camera
+[1.225s] -- Looking for ignition-sensors6 -- found version 6.8.0
+[1.225s] -- Searching for <ignition-sensors6> component [rgbd_camera]
+[1.227s] -- Looking for ignition-sensors6-rgbd_camera -- found version 6.8.0
+[1.228s] -- Searching for dependencies of ignition-sensors6-rgbd_camera
+[1.228s] -- Looking for ignition-sensors6 -- found version 6.8.0
+[1.228s] -- Searching for <ignition-sensors6> component [thermal_camera]
+[1.231s] -- Looking for ignition-sensors6-thermal_camera -- found version 6.8.0
+[1.231s] -- Searching for dependencies of ignition-sensors6-thermal_camera
+[1.231s] -- Looking for ignition-sensors6 -- found version 6.8.0
+[1.233s] -- Looking for ignition-rendering6 -- found version 6.6.3
+[1.233s] -- Looking for ignition-math6 -- found version 6.15.1
+[1.235s] -- Looking for ignition-utils1 -- found version 1.5.1
+[1.255s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.301s] -- Configuring done
+[1.313s] -- Generating done
+[1.317s] -- Build files have been written to: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_gazebo
+[1.327s] Invoked command in '/home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_gazebo' returned '0': CMAKE_PREFIX_PATH=/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_description:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/odrive_hardware_interface:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_training:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_gazebo:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_bringup:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_leg_loop:/opt/ros/humble /usr/bin/cmake /home/v/Dev/Github/Cerberus/Control/cerberus_ws/src/cerberus/cerberus_gazebo -DCMAKE_INSTALL_PREFIX=/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_gazebo
+[1.329s] Invoking command in '/home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_gazebo': CMAKE_PREFIX_PATH=/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_description:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/odrive_hardware_interface:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_training:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_gazebo:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_bringup:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_leg_loop:/opt/ros/humble /usr/bin/cmake --build /home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_gazebo -- -j12 -l12
+[1.351s] [ 25%] [32mBuilding CXX object CMakeFiles/FullSystem.dir/src/FullSystem.cc.o[0m
+[1.351s] [ 50%] [32mBuilding CXX object CMakeFiles/BasicSystem.dir/src/BasicSystem.cc.o[0m
+[4.081s] [ 75%] [32m[1mLinking CXX shared library libBasicSystem.so[0m
+[4.171s] [100%] [32m[1mLinking CXX shared library libFullSystem.so[0m
+[4.247s] [100%] Built target BasicSystem
+[4.332s] [100%] Built target FullSystem
+[4.337s] Invoked command in '/home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_gazebo' returned '0': CMAKE_PREFIX_PATH=/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_description:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/odrive_hardware_interface:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_training:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_gazebo:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_bringup:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_leg_loop:/opt/ros/humble /usr/bin/cmake --build /home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_gazebo -- -j12 -l12
+[4.339s] Invoking command in '/home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_gazebo': CMAKE_PREFIX_PATH=/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_description:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/odrive_hardware_interface:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_training:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_gazebo:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_bringup:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_leg_loop:/opt/ros/humble /usr/bin/cmake --install /home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_gazebo
+[4.341s] -- Install configuration: ""
+[4.341s] -- Installing: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_gazebo/lib/cerberus_gazebo/libBasicSystem.so
+[4.342s] -- Installing: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_gazebo/lib/cerberus_gazebo/libFullSystem.so
+[4.344s] -- Installing: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_gazebo/share/cerberus_gazebo/worlds
+[4.344s] -- Installing: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_gazebo/share/cerberus_gazebo/worlds/cerberus.sdf
+[4.345s] -- Installing: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_gazebo/share/cerberus_gazebo/environment/cerberus_gazebo.dsv
+[4.345s] -- Installing: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_gazebo/share/cerberus_gazebo/environment/cerberus_gazebo.sh
+[4.345s] -- Installing: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_gazebo/share/ament_index/resource_index/package_run_dependencies/cerberus_gazebo
+[4.345s] -- Installing: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_gazebo/share/ament_index/resource_index/parent_prefix_path/cerberus_gazebo
+[4.345s] -- Installing: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_gazebo/share/cerberus_gazebo/environment/ament_prefix_path.sh
+[4.345s] -- Installing: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_gazebo/share/cerberus_gazebo/environment/ament_prefix_path.dsv
+[4.346s] -- Installing: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_gazebo/share/cerberus_gazebo/environment/path.sh
+[4.346s] -- Installing: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_gazebo/share/cerberus_gazebo/environment/path.dsv
+[4.346s] -- Installing: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_gazebo/share/cerberus_gazebo/local_setup.bash
+[4.346s] -- Installing: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_gazebo/share/cerberus_gazebo/local_setup.sh
+[4.346s] -- Installing: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_gazebo/share/cerberus_gazebo/local_setup.zsh
+[4.346s] -- Installing: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_gazebo/share/cerberus_gazebo/local_setup.dsv
+[4.346s] -- Installing: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_gazebo/share/cerberus_gazebo/package.dsv
+[4.346s] -- Installing: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_gazebo/share/ament_index/resource_index/packages/cerberus_gazebo
+[4.347s] -- Installing: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_gazebo/share/cerberus_gazebo/cmake/cerberus_gazeboConfig.cmake
+[4.347s] -- Installing: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_gazebo/share/cerberus_gazebo/cmake/cerberus_gazeboConfig-version.cmake
+[4.347s] -- Installing: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_gazebo/share/cerberus_gazebo/package.xml
+[4.349s] Invoked command in '/home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_gazebo' returned '0': CMAKE_PREFIX_PATH=/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_description:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/odrive_hardware_interface:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_training:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_gazebo:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_bringup:/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_leg_loop:/opt/ros/humble /usr/bin/cmake --install /home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_gazebo

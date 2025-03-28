@@ -1,0 +1,29 @@
+-- Found ament_cmake_auto: 1.3.11 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_description
+-- Install configuration: ""
+-- Execute custom install script
+-- Symlinking: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_description/share/cerberus_description/urdf/cerberus.urdf
+-- Symlinking: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_description/share/cerberus_description/urdf/cerberus_odrive.urdf.xacro
+-- Symlinking: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_description/share/cerberus_description/urdf/cerberus_single_leg.urdf.xacro
+-- Symlinking: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_description/share/cerberus_description/urdf/cerberus_two_odrive.urdf.xacro
+-- Symlinking: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_description/share/cerberus_description/urdf/cerbiboi.urdf.xacro
+-- Symlinking: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_description/share/cerberus_description/urdf/leg_macro.xacro
+-- Symlinking: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_description/share/cerberus_description/urdf/odrive.ros2_control.xacro
+-- Symlinking: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_description/share/ament_index/resource_index/package_run_dependencies/cerberus_description
+-- Symlinking: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_description/share/ament_index/resource_index/parent_prefix_path/cerberus_description
+-- Symlinking: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_description/share/cerberus_description/environment/ament_prefix_path.sh
+-- Symlinking: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_description/share/cerberus_description/environment/ament_prefix_path.dsv
+-- Symlinking: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_description/share/cerberus_description/environment/path.sh
+-- Symlinking: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_description/share/cerberus_description/environment/path.dsv
+-- Symlinking: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_description/share/cerberus_description/local_setup.bash
+-- Symlinking: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_description/share/cerberus_description/local_setup.sh
+-- Symlinking: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_description/share/cerberus_description/local_setup.zsh
+-- Symlinking: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_description/share/cerberus_description/local_setup.dsv
+-- Symlinking: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_description/share/cerberus_description/package.dsv
+-- Symlinking: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_description/share/ament_index/resource_index/packages/cerberus_description
+-- Symlinking: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_description/share/cerberus_description/cmake/cerberus_descriptionConfig.cmake
+-- Symlinking: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_description/share/cerberus_description/cmake/cerberus_descriptionConfig-version.cmake
+-- Symlinking: /home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_description/share/cerberus_description/package.xml

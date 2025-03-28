@@ -1,1 +1,1 @@
-cerberus_description:robot_state_publisher:ros2_controllers:xacro
+cerberus_description:joint_state_publisher_gui:robot_state_publisher:ros2_controllers:xacro

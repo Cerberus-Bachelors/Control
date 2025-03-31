@@ -74,7 +74,7 @@
     <child link="FL_gearbox_shoulder2"/>
     <origin rpy="1.5707963267948963 0 0" xyz="0 0 0.1"/>
     <axis xyz="0 1 0"/>
-    <limit effort="35" lower="-1.57" upper="1.57" velocity="35"/>
+    <limit effort="45" lower="-1.57" upper="1.57" velocity="45"/>
   </joint>
   <link name="FL_gearbox_shoulder2">
     <visual>
@@ -102,7 +102,7 @@
     <child link="FL_upper_leg"/>
     <origin rpy="1.5707963267948963 0 1.5707963267948966" xyz="0 0 -0.1205"/>
     <axis xyz="0 1 0"/>
-    <limit effort="35" lower="-2.094395102" upper="1.047197551" velocity="35"/>
+    <limit effort="45" lower="-2.094395102" upper="1.047197551" velocity="45"/>
   </joint>
   <link name="FL_outer_gearbox">
     <visual>
@@ -156,7 +156,7 @@
     <child link="FL_lower_leg"/>
     <origin rpy="0 1.5707963267948966 0" xyz="0 0 0.3"/>
     <axis xyz="0 1 0"/>
-    <limit effort="35" lower="-0.5235987756" upper="1.047197551" velocity="35"/>
+    <limit effort="45" lower="-0.5235987756" upper="1.047197551" velocity="45"/>
   </joint>
   <link name="FL_lower_leg">
     <visual>
@@ -184,7 +184,7 @@
     <child link="FL_sock"/>
     <origin rpy="1.5707963267948966 0 0" xyz="0 0 0.3"/>
   </joint>
-  <link name="FL_sock">
+  <link name="FL_foot">
     <visual>
       <origin xyz="0 0 0"/>
       <geometry>
@@ -264,7 +264,7 @@
     <child link="FR_gearbox_shoulder2"/>
     <origin rpy="1.5707963267948963 0 0" xyz="0 0 0.1"/>
     <axis xyz="0 -1 0"/>
-    <limit effort="35" lower="-1.57" upper="1.57" velocity="35"/>
+    <limit effort="45" lower="-1.57" upper="1.57" velocity="45"/>
   </joint>
   <link name="FR_gearbox_shoulder2">
     <visual>
@@ -292,7 +292,7 @@
     <child link="FR_upper_leg"/>
     <origin rpy="1.5707963267948963 0 -1.5707963267948966" xyz="0 0 -0.1205"/>
     <axis xyz="0 -1 0"/>
-    <limit effort="35" lower="-2.094395102" upper="1.047197551" velocity="35"/>
+    <limit effort="45" lower="-2.094395102" upper="1.047197551" velocity="45"/>
   </joint>
   <link name="FR_outer_gearbox">
     <visual>
@@ -346,7 +346,7 @@
     <child link="FR_lower_leg"/>
     <origin rpy="0 -1.5707963267948966 0" xyz="0 0 0.3"/>
     <axis xyz="0 -1 0"/>
-    <limit effort="35" lower="-0.5235987756" upper="1.047197551" velocity="35"/>
+    <limit effort="45" lower="-0.5235987756" upper="1.047197551" velocity="45"/>
   </joint>
   <link name="FR_lower_leg">
     <visual>
@@ -374,7 +374,7 @@
     <child link="FR_sock"/>
     <origin rpy="1.5707963267948966 0 0" xyz="0 0 0.3"/>
   </joint>
-  <link name="FR_sock">
+  <link name="FR_foot">
     <visual>
       <origin xyz="0 0 0"/>
       <geometry>
@@ -454,7 +454,7 @@
     <child link="RL_gearbox_shoulder2"/>
     <origin rpy="1.5707963267948963 0 0" xyz="0 0 -0.1"/>
     <axis xyz="0 1 0"/>
-    <limit effort="35" lower="-1.57" upper="1.57" velocity="35"/>
+    <limit effort="45" lower="-1.57" upper="1.57" velocity="45"/>
   </joint>
   <link name="RL_gearbox_shoulder2">
     <visual>
@@ -482,7 +482,7 @@
     <child link="RL_upper_leg"/>
     <origin rpy="1.5707963267948963 0 1.5707963267948966" xyz="0 0 -0.1205"/>
     <axis xyz="0 1 0"/>
-    <limit effort="35" lower="-2.094395102" upper="1.047197551" velocity="35"/>
+    <limit effort="45" lower="-2.094395102" upper="1.047197551" velocity="45"/>
   </joint>
   <link name="RL_outer_gearbox">
     <visual>
@@ -536,7 +536,7 @@
     <child link="RL_lower_leg"/>
     <origin rpy="0 1.5707963267948966 0" xyz="0 0 0.3"/>
     <axis xyz="0 1 0"/>
-    <limit effort="35" lower="-0.5235987756" upper="1.047197551" velocity="35"/>
+    <limit effort="45" lower="-0.5235987756" upper="1.047197551" velocity="45"/>
   </joint>
   <link name="RL_lower_leg">
     <visual>
@@ -564,7 +564,7 @@
     <child link="RL_sock"/>
     <origin rpy="1.5707963267948966 0 0" xyz="0 0 0.3"/>
   </joint>
-  <link name="RL_sock">
+  <link name="RL_foot">
     <visual>
       <origin xyz="0 0 0"/>
       <geometry>
@@ -644,7 +644,7 @@
     <child link="RR_gearbox_shoulder2"/>
     <origin rpy="1.5707963267948963 0 0" xyz="0 0 -0.1"/>
     <axis xyz="0 -1 0"/>
-    <limit effort="35" lower="-1.57" upper="1.57" velocity="35"/>
+    <limit effort="45" lower="-1.57" upper="1.57" velocity="45"/>
   </joint>
   <link name="RR_gearbox_shoulder2">
     <visual>
@@ -672,7 +672,7 @@
     <child link="RR_upper_leg"/>
     <origin rpy="1.5707963267948963 0 -1.5707963267948966" xyz="0 0 -0.1205"/>
     <axis xyz="0 -1 0"/>
-    <limit effort="35" lower="-2.094395102" upper="1.047197551" velocity="35"/>
+    <limit effort="45" lower="-2.094395102" upper="1.047197551" velocity="45"/>
   </joint>
   <link name="RR_outer_gearbox">
     <visual>
@@ -726,7 +726,7 @@
     <child link="RR_lower_leg"/>
     <origin rpy="0 -1.5707963267948966 0" xyz="0 0 0.3"/>
     <axis xyz="0 -1 0"/>
-    <limit effort="35" lower="-0.5235987756" upper="1.047197551" velocity="35"/>
+    <limit effort="45" lower="-0.5235987756" upper="1.047197551" velocity="45"/>
   </joint>
   <link name="RR_lower_leg">
     <visual>
@@ -754,7 +754,7 @@
     <child link="RR_sock"/>
     <origin rpy="1.5707963267948966 0 0" xyz="0 0 0.3"/>
   </joint>
-  <link name="RR_sock">
+  <link name="RR_foot">
     <visual>
       <origin xyz="0 0 0"/>
       <geometry>

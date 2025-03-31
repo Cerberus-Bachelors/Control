@@ -175,7 +175,7 @@
       <origin xyz="0 0 0.3" rpy="1.5707963267948966 0 0" />
     </joint>
 
-    <link name="${leg_name}_sock">
+    <link name="${leg_name}_foot">
       <visual>
         <origin xyz="0 0 0" />
         <geometry>

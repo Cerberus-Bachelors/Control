@@ -181,7 +181,7 @@
   </link>
   <joint name="FL_foot_fixed" type="fixed">
     <parent link="FL_lower_leg"/>
-    <child link="FL_sock"/>
+    <child link="FL_foot"/>
     <origin rpy="1.5707963267948966 0 0" xyz="0 0 0.3"/>
   </joint>
   <link name="FL_foot">
@@ -371,7 +371,7 @@
   </link>
   <joint name="FR_foot_fixed" type="fixed">
     <parent link="FR_lower_leg"/>
-    <child link="FR_sock"/>
+    <child link="FR_foot"/>
     <origin rpy="1.5707963267948966 0 0" xyz="0 0 0.3"/>
   </joint>
   <link name="FR_foot">
@@ -561,7 +561,7 @@
   </link>
   <joint name="RL_foot_fixed" type="fixed">
     <parent link="RL_lower_leg"/>
-    <child link="RL_sock"/>
+    <child link="RL_foot"/>
     <origin rpy="1.5707963267948966 0 0" xyz="0 0 0.3"/>
   </joint>
   <link name="RL_foot">
@@ -751,7 +751,7 @@
   </link>
   <joint name="RR_foot_fixed" type="fixed">
     <parent link="RR_lower_leg"/>
-    <child link="RR_sock"/>
+    <child link="RR_foot"/>
     <origin rpy="1.5707963267948966 0 0" xyz="0 0 0.3"/>
   </joint>
   <link name="RR_foot">

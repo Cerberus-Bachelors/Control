@@ -169,10 +169,13 @@
       </inertial>
     </link>
 
-    <joint name="${leg_name}_foot_fixed" type="fixed">
+    <joint name="${leg_name}_foot_fixed" type="revolute">
       <parent link="${leg_name}_lower_leg" />
       <child link="${leg_name}_foot" />
       <origin xyz="0 0 0.3" rpy="1.5707963267948966 0 0" />
+      <axis xyz="1 0 0" />
+      <limit lower="0"
+        upper="0" />
     </joint>
 
     <link name="${leg_name}_foot">

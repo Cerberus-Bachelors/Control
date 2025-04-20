@@ -41,7 +41,7 @@ odrv0.axis0.config.startup_encoder_index_search = True
 odrv0.axis0.config.watchdog_timeout = 0
 
 
-odrv0.axis1.motor.config.current_lim = 35
+odrv0.axis1.motor.config.current_lim = 25
 odrv0.axis1.controller.config.vel_limit = 25
 odrv0.axis1.motor.config.pole_pairs = 11
 odrv0.axis1.motor.config.torque_constant = 8.27/340

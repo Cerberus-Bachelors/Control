@@ -185,5 +185,13 @@ Blind model
         self.observations.policy.height_scan = None
         # no terrain curriculum
         self.curriculum.terrain_levels = None
+        
+        OLD
+        joint_pos={
+            ".*_hip_joint": math.pi/36,
+            ".*_thigh_joint": -5*math.pi/18,
+            ".*_calf_joint": 0,
+        },
+        
 
 

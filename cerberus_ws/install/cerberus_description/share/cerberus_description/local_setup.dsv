@@ -1,1 +1,2 @@
-/home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_description/ament_cmake_environment_hooks/local_setup.dsv
+source;share/cerberus_description/environment/ament_prefix_path.sh
+source;share/cerberus_description/environment/path.sh

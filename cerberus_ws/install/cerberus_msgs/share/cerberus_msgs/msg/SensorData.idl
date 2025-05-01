@@ -1,0 +1,30 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from cerberus_msgs/msg/SensorData.msg
+// generated code does not contain a copyright notice
+
+
+module cerberus_msgs {
+  module msg {
+    struct SensorData {
+      float accel_x;
+
+      float accel_y;
+
+      float accel_z;
+
+      float gyro_x;
+
+      float gyro_y;
+
+      float gyro_z;
+
+      float heading;
+
+      float latitude;
+
+      float longitude;
+
+      float altitude;
+    };
+  };
+};

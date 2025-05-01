@@ -1,1 +1,2 @@
-/home/v/Dev/Github/Cerberus/Control/cerberus_ws/build/cerberus_gazebo/ament_cmake_environment_hooks/cerberus_gazebo.sh
+ament_prepend_unique_value IGN_GAZEBO_RESOURCE_PATH "$AMENT_CURRENT_PREFIX/share/cerberus_gazebo/worlds"
+ament_prepend_unique_value IGN_GAZEBO_PLUGIN_PATH "$AMENT_CURRENT_PREFIX/lib/cerberus_gazebo"

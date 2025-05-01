@@ -11,4 +11,14 @@ Odrv : 205B39814D4D
 	M0: FR_calf
 	M1: FL_calf
 	
-
+Odrv : 208339814D4D
+	M0: RR_hip
+	M1: RL_hip
+	
+Odrv : 345735573033
+	M0: RR_thigh
+	M1: RL_thigh
+	
+Odrv : 346035533033
+	M0: RR_calf
+	M1: RL_calf

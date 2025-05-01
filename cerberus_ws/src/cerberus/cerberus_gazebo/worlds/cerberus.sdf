@@ -1,13 +1,4 @@
 <?xml version="1.0"?>
-<!--
-  Try sending commands:
-    gz topic -t "/model/diff_drive/cmd_vel" -m gz.msgs.Twist -p "linear: {x: 1.0}, angular: {z: -0.1}"
-    ros2 topic pub /diff_drive/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 5.0, y: 0.0, z: 0.0},
-angular: {x: 0.0, y: 0.0, z: -0.1}}"
-  Listen to odometry:
-    gz topic -e -t /model/diff_drive/odometry
-    ros2 topic echo /model/diff_drive/odometry
--->
 <sdf version="1.8">
   <world name="cerberus">
     <plugin
@@ -35,6 +26,13 @@ angular: {x: 0.0, y: 0.0, z: -0.1}}"
       filename="FullSystem"
       name="cerberus_gazebo::FullSystem">
     </plugin>
+
+    <physics name="default_physics" type="ignition-physics">
+      <max_step_size>0.005</max_step_size> <!-- smaller = more stable -->
+      <real_time_factor>1.0</real_time_factor>
+      <real_time_update_rate>200</real_time_update_rate>
+      <gravity>0 0 -9.81</gravity>
+    </physics>
 
     <light name="sun" type="directional">
       <cast_shadows>true</cast_shadows>

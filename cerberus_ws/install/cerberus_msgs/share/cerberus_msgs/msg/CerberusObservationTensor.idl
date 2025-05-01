@@ -1,0 +1,24 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from cerberus_msgs/msg/CerberusObservationTensor.msg
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/Vector3.idl"
+
+module cerberus_msgs {
+  module msg {
+    typedef double double__12[12];
+    struct CerberusObservationTensor {
+      geometry_msgs::msg::Vector3 base_ang_vel;
+
+      geometry_msgs::msg::Vector3 proj_grav;
+
+      geometry_msgs::msg::Vector3 command;
+
+      double__12 joint_pos;
+
+      double__12 joint_vel;
+
+      double__12 actions;
+    };
+  };
+};

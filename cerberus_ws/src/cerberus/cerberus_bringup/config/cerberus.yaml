@@ -1,6 +1,6 @@
 controller_manager:
   ros__parameters:
-    update_rate: 100 # Hz
+    update_rate: 200 # Hz
 
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
@@ -20,79 +20,79 @@ controller_manager:
 group_position_controller:
   ros__parameters:
     joints:
-      - front_left_shoulder_connector
-      - front_left_shoulder_leg
-      - front_left_knee
-      - front_right_shoulder_connector
-      - front_right_shoulder_leg
-      - front_right_knee
-      - rear_left_shoulder_connector
-      - rear_left_shoulder_leg
-      - rear_left_knee
-      - rear_right_shoulder_connector
-      - rear_right_shoulder_leg
-      - rear_right_knee
+      - FL_hip_joint
+      - FR_hip_joint
+      - RL_hip_joint
+      - RR_hip_joint
+      - FL_thigh_joint
+      - FR_thigh_joint
+      - RL_thigh_joint
+      - RR_thigh_joint
+      - FL_calf_joint
+      - FR_calf_joint
+      - RL_calf_joint
+      - RR_calf_joint
+
 
 group_velocity_controller:
   ros__parameters:
     joints:
-      - front_left_shoulder_connector
-      - front_left_shoulder_leg
-      - front_left_knee
-      - front_right_shoulder_connector
-      - front_right_shoulder_leg
-      - front_right_knee
-      - rear_left_shoulder_connector
-      - rear_left_shoulder_leg
-      - rear_left_knee
-      - rear_right_shoulder_connector
-      - rear_right_shoulder_leg
-      - rear_right_knee
+      - FL_hip_joint
+      - FR_hip_joint
+      - RL_hip_joint
+      - RR_hip_joint
+      - FL_thigh_joint
+      - FR_thigh_joint
+      - RL_thigh_joint
+      - RR_thigh_joint
+      - FL_calf_joint
+      - FR_calf_joint
+      - RL_calf_joint
+      - RR_calf_joint
 
 group_effort_controller:
   ros__parameters:
     joints:
-      - front_left_shoulder_connector
-      - front_left_shoulder_leg
-      - front_left_knee
-      - front_right_shoulder_connector
-      - front_right_shoulder_leg
-      - front_right_knee
-      - rear_left_shoulder_connector
-      - rear_left_shoulder_leg
-      - rear_left_knee
-      - rear_right_shoulder_connector
-      - rear_right_shoulder_leg
-      - rear_right_knee
+      - FL_hip_joint
+      - FR_hip_joint
+      - RL_hip_joint
+      - RR_hip_joint
+      - FL_thigh_joint
+      - FR_thigh_joint
+      - RL_thigh_joint
+      - RR_thigh_joint
+      - FL_calf_joint
+      - FR_calf_joint
+      - RL_calf_joint
+      - RR_calf_joint
       
 joint_trajectory_controller:
   ros__parameters:
     joints:
-      - front_left_shoulder_connector
-      - front_left_shoulder_leg
-      - front_left_knee
-      - front_right_shoulder_connector
-      - front_right_shoulder_leg
-      - front_right_knee
-      - rear_left_shoulder_connector
-      - rear_left_shoulder_leg
-      - rear_left_knee
-      - rear_right_shoulder_connector
-      - rear_right_shoulder_leg
-      - rear_right_knee
+      - FL_hip_joint
+      - FR_hip_joint
+      - RL_hip_joint
+      - RR_hip_joint
+      - FL_thigh_joint
+      - FR_thigh_joint
+      - RL_thigh_joint
+      - RR_thigh_joint
+      - FL_calf_joint
+      - FR_calf_joint
+      - RL_calf_joint
+      - RR_calf_joint
 
     command_interfaces:
       - position
-      - velocity
 
     state_interfaces:
       - position
       - velocity
 
-    state_publish_rate: 100.0 # Defaults to 50
-    action_monitor_rate: 20.0 # Defaults to 20
+    state_publish_rate: 200.0 # Defaults to 50
+    action_monitor_rate: 200.0 # Defaults to 20
 
-    allow_partial_joints_goal: false # Defaults to false
+    allow_partial_joints_goal: False # Defaults to false
     open_loop_control: false
     allow_integration_in_goal_trajectories: true
     constraints:

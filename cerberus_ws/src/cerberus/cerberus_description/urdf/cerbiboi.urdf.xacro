@@ -3,8 +3,8 @@
 
     <xacro:include filename="$(find cerberus_description)/urdf/leg_macro.xacro" />
 
-    <xacro:arg name="effort" default="45" />
-    <xacro:arg name="max_joint_velocity" default="150.0" />
+    <xacro:arg name="effort" default="55" />
+    <xacro:arg name="max_joint_velocity" default="1.0" />
 
     <!--
     <link name="world" />
@@ -18,6 +18,7 @@
         <visual>
             <geometry>
                 <box size="0.45 0.282 0.2" />
+                <!--         d    w    h       -->
             </geometry>
             <material name="blue">
                 <color rgba="0.3 0.3 0.8 1.0" />
@@ -45,14 +46,14 @@
         </collision>
         <inertial>
             <mass value="5.0" />
-            <inertia ixx="0.04980166667" iyy="0.1010416667" izz="0.11751"
+            <inertia ixx="0.1010416667" iyy="0.04980166667" izz="0.1175"
                 ixy="0.0" ixz="0.0" iyz="0.0" />
         </inertial>
     </link>
 
-    <xacro:leg_macro 
-        leg_name="FL" 
-        parent_link="base_link" 
+    <xacro:leg_macro
+        leg_name="FL"
+        parent_link="base_link"
         gearbox_offset="0.1"
         connector_xyz="0.275 0.08 0"
         connector_rpy="0 1.5707963267948966 0"
@@ -64,9 +65,9 @@
         knee_lower_limit="-0.5235987756"
         knee_upper_limit="1.047197551"
         effort="$(arg effort)"
-        max_joint_velocity="$(arg effort)"
+        max_joint_velocity="$(arg max_joint_velocity)"
     />
-    
+
     <xacro:leg_macro
         leg_name="FR"
         parent_link="base_link"
@@ -81,7 +82,7 @@
         knee_lower_limit="-0.5235987756"
         knee_upper_limit="1.047197551"
         effort="$(arg effort)"
-        max_joint_velocity="$(arg effort)"
+        max_joint_velocity="$(arg max_joint_velocity)"
     />
 
     <xacro:leg_macro
@@ -98,7 +99,7 @@
         knee_lower_limit="-0.5235987756"
         knee_upper_limit="1.047197551"
         effort="$(arg effort)"
-        max_joint_velocity="$(arg effort)"
+        max_joint_velocity="$(arg max_joint_velocity)"
     />
 
     <xacro:leg_macro
@@ -115,97 +116,159 @@
         knee_lower_limit="-0.5235987756"
         knee_upper_limit="1.047197551"
         effort="$(arg effort)"
-        max_joint_velocity="$(arg effort)"
+        max_joint_velocity="$(arg max_joint_velocity)"
     />
+
+    <link name="imu_link">
+        <inertial>
+            <mass value="0.01" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.00001" iyy="0.00001" izz="0.00001" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+    </link>
+
+    <joint name="imu_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="imu_link" />
+        <origin xyz="0 0 0.1" rpy="0 0 0" />
+    </joint>
+
+    <gazebo reference="imu_link">
+        <sensor name="imu_sensor" type="imu">
+            <update_rate>200.0</update_rate>
+            <always_on>1</always_on>
+            <visualize>true</visualize>
+            <imu>
+                <topic>imu</topic>
+                <angular_velocity>
+                    <x>
+                        <noise type="gaussian">
+                            <mean>0.0</mean>
+                            <stddev>0.1</stddev>
+                        </noise>
+                    </x>
+                    <y>
+                        <noise type="gaussian">
+                            <mean>0.0</mean>
+                            <stddev>0.1</stddev>
+                        </noise>
+                    </y>
+                    <z>
+                        <noise type="gaussian">
+                            <mean>0.0</mean>
+                            <stddev>0.1</stddev>
+                        </noise>
+                    </z>
+                </angular_velocity>
+                <linear_acceleration>
+                    <x>true</x>
+                    <y>true</y>
+                    <z>true</z>
+                </linear_acceleration>
+            </imu>
+        </sensor>
+    </gazebo>
 
     <ros2_control name="IgnitionSystem" type="system">
         <hardware>
             <plugin>ign_ros2_control/IgnitionSystem</plugin>
         </hardware>
 
-        <joint name="front_left_shoulder_connector">
+        <joint name="FL_hip_joint">
             <command_interface name="position" />
             <command_interface name="velocity" />
             <state_interface name="position" />
             <state_interface name="velocity" />
+            <state_interface name="effort" />
         </joint>
 
-        <joint name="front_left_shoulder_leg">
+        <joint name="FL_thigh_joint">
             <command_interface name="position" />
             <command_interface name="velocity" />
             <state_interface name="position" />
             <state_interface name="velocity" />
+            <state_interface name="effort" />
         </joint>
 
-        <joint name="front_left_knee">
+        <joint name="FL_calf_joint">
             <command_interface name="position" />
             <command_interface name="velocity" />
             <state_interface name="position" />
             <state_interface name="velocity" />
+            <state_interface name="effort" />
         </joint>
 
-        <joint name="front_right_shoulder_connector">
+        <joint name="FR_hip_joint">
             <command_interface name="position" />
             <command_interface name="velocity" />
             <state_interface name="position" />
             <state_interface name="velocity" />
+            <state_interface name="effort" />
         </joint>
 
-        <joint name="front_right_shoulder_leg">
+        <joint name="FR_thigh_joint">
             <command_interface name="position" />
             <command_interface name="velocity" />
             <state_interface name="position" />
             <state_interface name="velocity" />
-        </joint>
-        <joint name="front_right_knee">
-            <command_interface name="position" />
-            <command_interface name="velocity" />
-            <state_interface name="position" />
-            <state_interface name="velocity" />
+            <state_interface name="effort" />
         </joint>
 
-        <joint name="rear_left_shoulder_connector">
+        <joint name="FR_calf_joint">
             <command_interface name="position" />
             <command_interface name="velocity" />
             <state_interface name="position" />
             <state_interface name="velocity" />
+            <state_interface name="effort" />
         </joint>
 
-        <joint name="rear_left_shoulder_leg">
+        <joint name="RL_hip_joint">
             <command_interface name="position" />
             <command_interface name="velocity" />
             <state_interface name="position" />
             <state_interface name="velocity" />
+            <state_interface name="effort" />
         </joint>
 
-        <joint name="rear_left_knee">
+        <joint name="RL_thigh_joint">
             <command_interface name="position" />
             <command_interface name="velocity" />
             <state_interface name="position" />
             <state_interface name="velocity" />
+            <state_interface name="effort" />
         </joint>
 
-        <joint name="rear_right_shoulder_connector">
+        <joint name="RL_calf_joint">
             <command_interface name="position" />
             <command_interface name="velocity" />
             <state_interface name="position" />
             <state_interface name="velocity" />
+            <state_interface name="effort" />
         </joint>
 
-        <joint name="rear_right_shoulder_leg">
+        <joint name="RR_hip_joint">
             <command_interface name="position" />
             <command_interface name="velocity" />
             <state_interface name="position" />
             <state_interface name="velocity" />
+            <state_interface name="effort" />
         </joint>
 
-        <joint name="rear_right_knee">
+        <joint name="RR_thigh_joint">
             <command_interface name="position" />
             <command_interface name="velocity" />
             <state_interface name="position" />
             <state_interface name="velocity" />
+            <state_interface name="effort" />
         </joint>
 
+        <joint name="RR_calf_joint">
+            <command_interface name="position" />
+            <command_interface name="velocity" />
+            <state_interface name="position" />
+            <state_interface name="velocity" />
+            <state_interface name="effort" />
+        </joint>
     </ros2_control>
 
     <gazebo>
@@ -215,21 +278,9 @@
             <robot_param_node>robot_state_publisher</robot_param_node>
             <parameters>$(find cerberus_bringup)/config/cerberus.yaml</parameters>
         </plugin>
+        <plugin filename="libignition-gazebo-imu-system.so"
+            name="ignition::gazebo::systems::Imu">
+        </plugin>
     </gazebo>
-
-    <gazebo reference="base_link">
-        <sensor name="imu_sensor" type="imu">
-            <!-- Typically you need some sub-elements under <imu> -->
-            <update_rate>50</update_rate>
-            <always_on>true</always_on>
-            <visualize>true</visualize>
-            <topic>imu</topic>
-            <imu>
-                <noise type="none" />
-                <!-- or define noise parameters here -->
-            </imu>
-        </sensor>
-    </gazebo>
-
 
 </robot>

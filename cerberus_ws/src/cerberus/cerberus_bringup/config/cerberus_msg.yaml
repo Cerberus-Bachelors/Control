@@ -9,10 +9,10 @@
   ros_type_name: "nav_msgs/msg/Odometry"
   gz_type_name: "gz.msgs.Odometry"
   direction: GZ_TO_ROS
-- ros_topic_name: "/cerberus/scan"
-  gz_topic_name: "/scan"
-  ros_type_name: "sensor_msgs/msg/LaserScan"
-  gz_type_name: "gz.msgs.LaserScan"
+- ros_topic_name: "/cerberus/imu"
+  gz_topic_name: "/world/cerberus/model/cerberus/link/base_link/sensor/imu_sensor/imu"
+  ros_type_name: "sensor_msgs/msg/Imu"
+  gz_type_name: "gz.msgs.IMU"
   direction: GZ_TO_ROS
 - ros_topic_name: "/clock"
   gz_topic_name: "/clock"

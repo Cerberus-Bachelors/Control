@@ -7,27 +7,54 @@ print("Finding ODrives...")
 
 odrive_list = []
 
-odrive_list.append(odrive.find_any(serial_number="20763599524B"))
-odrive_list.append(odrive.find_any(serial_number="2081356E524B"))
-odrive_list.append(odrive.find_any(serial_number="205B39814D4D"))
+#odrive_list.append(odrive.find_any(serial_number="20763599524B")) ## Front RL HIP
+#odrive_list.append(odrive.find_any(serial_number="2081356E524B")) ## Front RL THIGH
+odrive_list.append(odrive.find_any(serial_number="205B39814D4D")) ## Front RL CALF
 
-#odrive_list.append(odrive.find_any(serial_number="208339814D4D"))
-#odrive_list.append(odrive.find_any(serial_number="346935563033"))
-#odrive_list.append(odrive.find_any(serial_number="346035533033"))
-
+#odrive_list.append(odrive.find_any(serial_number="208339814D4D"))  ## Rear RL HIP
+#odrive_list.append(odrive.find_any(serial_number="345735573033"))  ## Rear RL Thigh
+#odrive_list.append(odrive.find_any(serial_number="346035533033"))  ## Rear RL Calf 
 
 
 #for odrv in odrive_list
 
 drive = 0
 axis = 1
-if drive==0 or drive==1 or drive==2:
+if drive==0:
     if axis == 0:
         odrive_list[drive].axis0.encoder.config.cpr = 4000
     else:
-        if odrive == 0:
-            odrive_list[drive].axis1.encoder.config.cpr = 2048  
+        odrive_list[drive].axis1.encoder.config.cpr = 2000# Actual value: 2048  
+
+if drive==1:
+    if axis == 0:
+        odrive_list[drive].axis0.encoder.config.cpr = 4000
+    else:
         odrive_list[drive].axis1.encoder.config.cpr = 2000  
+    
+if drive==2:
+    if axis == 0:
+        odrive_list[drive].axis0.encoder.config.cpr = 4000
+    else:
+        odrive_list[drive].axis1.encoder.config.cpr = 2000
+
+if drive==3:
+    if axis == 0:
+        odrive_list[drive].axis0.encoder.config.cpr = 2000
+    else:
+        odrive_list[drive].axis1.encoder.config.cpr = 2000
+
+if drive==4:
+    if axis == 0:
+        odrive_list[drive].axis0.encoder.config.cpr = 2048
+    else:
+        odrive_list[drive].axis1.encoder.config.cpr = 2000
+
+if drive==5:
+    if axis == 0:
+        odrive_list[drive].axis0.encoder.config.cpr = 4000
+    else:
+        odrive_list[drive].axis1.encoder.config.cpr = 2000 
 
 if axis == 0:
     odrive_list[drive].axis0.motor.config.calibration_current = 20

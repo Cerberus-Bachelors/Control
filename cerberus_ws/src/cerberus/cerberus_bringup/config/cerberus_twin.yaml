@@ -21,6 +21,8 @@ group_position_controller:
   ros__parameters:
     joints:
       - joint0
+      - joint1
+
 
 group_velocity_controller:
   ros__parameters:

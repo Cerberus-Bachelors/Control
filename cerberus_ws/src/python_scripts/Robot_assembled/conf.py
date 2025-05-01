@@ -8,13 +8,14 @@ print("Finding ODrives...")
 
 odrive_list = []
 
-odrive_list.append(odrive.find_any(serial_number="20763599524B"))
-odrive_list.append(odrive.find_any(serial_number="2081356E524B"))
-odrive_list.append(odrive.find_any(serial_number="205B39814D4D"))
+odrive_list.append(odrive.find_any(serial_number="20763599524B")) ## Front RL HIP
+odrive_list.append(odrive.find_any(serial_number="2081356E524B")) ## Front RL THIGH
+odrive_list.append(odrive.find_any(serial_number="205B39814D4D")) ## Front RL CALF
 
-#odrive_list.append(odrive.find_any(serial_number="346035533033"))
-#odrive_list.append(odrive.find_any(serial_number="346935563033"))
-#odrive_list.append(odrive.find_any(serial_number="208339814D4D"))
+odrive_list.append(odrive.find_any(serial_number="208339814D4D"))  ## Rear RL HIP
+odrive_list.append(odrive.find_any(serial_number="345735573033"))  ## Rear RL Thigh
+odrive_list.append(odrive.find_any(serial_number="346035533033"))  ## Rear RL Calf 
+
 
 print("Erasing configuration")
 try:
@@ -27,13 +28,13 @@ time.sleep(5)
 
 odrive_list.clear()
 
-odrive_list.append(odrive.find_any(serial_number="20763599524B"))
-#odrive_list.append(odrive.find_any(serial_number="2081356E524B"))
-#odrive_list.append(odrive.find_any(serial_number="205B39814D4D"))
+odrive_list.append(odrive.find_any(serial_number="20763599524B")) ## Front RL HIP
+odrive_list.append(odrive.find_any(serial_number="2081356E524B")) ## Front RL THIGH
+odrive_list.append(odrive.find_any(serial_number="205B39814D4D")) ## Front RL CALF
 
-#odrive_list.append(odrive.find_any(serial_number="346035533033"))
-#odrive_list.append(odrive.find_any(serial_number="346935563033"))
-#odrive_list.append(odrive.find_any(serial_number="208339814D4D"))
+odrive_list.append(odrive.find_any(serial_number="208339814D4D"))  ## Rear RL HIP
+odrive_list.append(odrive.find_any(serial_number="345735573033"))  ## Rear RL Thigh
+odrive_list.append(odrive.find_any(serial_number="346035533033"))  ## Rear RL Calf 
 
 for count, odrv in enumerate(odrive_list):
     odrv.config.dc_max_positive_current = 40.0

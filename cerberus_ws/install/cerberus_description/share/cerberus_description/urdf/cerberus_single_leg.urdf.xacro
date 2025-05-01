@@ -1,1 +1,65 @@
-/home/v/Dev/Github/Cerberus/Control/cerberus_ws/src/cerberus/cerberus_description/urdf/cerberus_single_leg.urdf.xacro
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="odrive_robot">
+
+  <xacro:arg name="enable_joint0"  default="false" />
+  <xacro:arg name="enable_joint1"  default="false" />
+  <xacro:arg name="enable_joint2"  default="false" />
+  <xacro:arg name="enable_joint3"  default="false" />
+
+  <xacro:arg name="odrive_1_serial" default="2081356E524B" />
+  <xacro:arg name="odrive_2_serial" default="20763599524B" />
+
+  <xacro:include filename="$(find cerberus_description)/urdf/odrive.ros2_control.xacro" />
+
+  <link name="world" />
+
+  <xacro:if value="$(arg enable_joint0)">
+    <link name="link0" />
+    <joint name="joint0" type="continuous">
+      <parent link="world"/>
+      <child link="link0"/>
+      <axis xyz="0 0 1"/>
+    </joint>
+  </xacro:if>
+
+  <xacro:if value="$(arg enable_joint1)">
+    <link name="link1" />
+    <joint name="joint1" type="continuous">
+      <parent link="world"/>
+      <child link="link1"/>
+      <axis xyz="0 0 1"/>
+    </joint>
+  </xacro:if>
+
+  <xacro:if value="$(arg enable_joint2)">
+    <link name="link2" />
+    <joint name="joint2" type="continuous">
+      <parent link="world"/>
+      <child link="link2"/>
+      <axis xyz="0 0 1"/>
+    </joint>
+  </xacro:if>
+
+  <xacro:if value="$(arg enable_joint3)">
+    <link name="link3" />
+    <joint name="joint3" type="continuous">
+      <parent link="world"/>
+      <child link="link3"/>
+      <axis xyz="0 0 1"/>
+    </joint>
+  </xacro:if>
+
+  <xacro:odrive_ros2_control
+    name="odrive1_ros2_control"
+    sensor_name="odrv0"
+    serial_number="$(arg odrive_1_serial)"
+    joint0_name="joint0" enable_joint0="$(arg enable_joint0)"
+    joint1_name="joint1" enable_joint1="$(arg enable_joint1)" />
+
+  <xacro:odrive_ros2_control
+    name="odrive2_ros2_control"
+    sensor_name="odrv1"
+    serial_number="$(arg odrive_2_serial)"
+    joint0_name="joint2" enable_joint0="$(arg enable_joint2)"
+    joint1_name="joint3" enable_joint1="$(arg enable_joint3)" />
+</robot>

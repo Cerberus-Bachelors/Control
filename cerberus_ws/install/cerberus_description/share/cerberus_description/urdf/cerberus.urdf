@@ -15,6 +15,7 @@
     <visual>
       <geometry>
         <box size="0.45 0.282 0.2"/>
+        <!--         d    w    h       -->
       </geometry>
       <material name="blue">
         <color rgba="0.3 0.3 0.8 1.0"/>
@@ -42,7 +43,7 @@
     </collision>
     <inertial>
       <mass value="5.0"/>
-      <inertia ixx="0.04980166667" ixy="0.0" ixz="0.0" iyy="0.1010416667" iyz="0.0" izz="0.11751"/>
+      <inertia ixx="0.1010416667" ixy="0.0" ixz="0.0" iyy="0.04980166667" iyz="0.0" izz="0.1175"/>
     </inertial>
   </link>
   <joint name="FL_leg_connector" type="fixed">
@@ -66,7 +67,7 @@
     </collision>
     <inertial>
       <mass value="0.95"/>
-      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+      <inertia ixx="0.001509" ixy="0.0" ixz="0.0" iyy="0.001509" iyz="0.0" izz="0.001438"/>
     </inertial>
   </link>
   <joint name="FL_hip_joint" type="revolute">
@@ -74,7 +75,8 @@
     <child link="FL_gearbox_shoulder2"/>
     <origin rpy="1.5707963267948963 0 0" xyz="0 0 0.1"/>
     <axis xyz="0 1 0"/>
-    <limit effort="45" lower="-1.57" upper="1.57" velocity="45"/>
+    <limit effort="55" lower="-1.57" upper="1.57" velocity="1.0"/>
+    <dynamics damping="0.9" friction="0.05"/>
   </joint>
   <link name="FL_gearbox_shoulder2">
     <visual>
@@ -93,8 +95,9 @@
       </geometry>
     </collision>
     <inertial>
+      <origin xyz="0 0 -0.0175"/>
       <mass value="0.95"/>
-      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+      <inertia ixx="0.001509" ixy="0.0" ixz="0.0" iyy="0.001509" iyz="0.0" izz="0.001438"/>
     </inertial>
   </link>
   <joint name="FL_thigh_joint" type="revolute">
@@ -102,7 +105,8 @@
     <child link="FL_upper_leg"/>
     <origin rpy="1.5707963267948963 0 1.5707963267948966" xyz="0 0 -0.1205"/>
     <axis xyz="0 1 0"/>
-    <limit effort="45" lower="-2.094395102" upper="1.047197551" velocity="45"/>
+    <limit effort="55" lower="-2.094395102" upper="1.047197551" velocity="1.0"/>
+    <dynamics damping="0.9" friction="0.05"/>
   </joint>
   <link name="FL_outer_gearbox">
     <visual>
@@ -121,8 +125,9 @@
       </geometry>
     </collision>
     <inertial>
+      <origin xyz="0 0 -0.0175"/>
       <mass value="0.95"/>
-      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+      <inertia ixx="0.001509" ixy="0.0" ixz="0.0" iyy="0.001509" iyz="0.0" izz="0.001438"/>
     </inertial>
   </link>
   <joint name="FL_shoulder_gearbox" type="fixed">
@@ -147,8 +152,9 @@
       </geometry>
     </collision>
     <inertial>
+      <origin xyz="0 0 0.15"/>
       <mass value="0.55"/>
-      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+      <inertia ixx="0.004327" ixy="0.0" ixz="0.0" iyy="0.004327" iyz="0.0" izz="0.000397"/>
     </inertial>
   </link>
   <joint name="FL_calf_joint" type="revolute">
@@ -156,7 +162,8 @@
     <child link="FL_lower_leg"/>
     <origin rpy="0 1.5707963267948966 0" xyz="0 0 0.3"/>
     <axis xyz="0 1 0"/>
-    <limit effort="45" lower="-0.5235987756" upper="1.047197551" velocity="45"/>
+    <limit effort="55" lower="-0.5235987756" upper="1.047197551" velocity="1.0"/>
+    <dynamics damping="0.9" friction="0.05"/>
   </joint>
   <link name="FL_lower_leg">
     <visual>
@@ -175,8 +182,9 @@
       </geometry>
     </collision>
     <inertial>
+      <origin xyz="0 0 0.15"/>
       <mass value="0.4"/>
-      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+      <inertia ixx="0.003068" ixy="0.0" ixz="0.0" iyy="0.003068" iyz="0.0" izz="0.000135"/>
     </inertial>
   </link>
   <joint name="FL_foot_fixed" type="revolute">
@@ -184,7 +192,7 @@
     <child link="FL_foot"/>
     <origin rpy="1.5707963267948966 0 0" xyz="0 0 0.3"/>
     <axis xyz="1 0 0"/>
-    <limit lower="0" upper="0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
   </joint>
   <link name="FL_foot">
     <visual>
@@ -234,7 +242,7 @@
     </collision>
     <inertial>
       <mass value="0.1"/>
-      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+      <inertia ixx="0.0000436" ixy="0.0" ixz="0.0" iyy="0.0000436" iyz="0.0" izz="0.000039"/>
     </inertial>
   </link>
   <joint name="FR_leg_connector" type="fixed">
@@ -258,7 +266,7 @@
     </collision>
     <inertial>
       <mass value="0.95"/>
-      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+      <inertia ixx="0.001509" ixy="0.0" ixz="0.0" iyy="0.001509" iyz="0.0" izz="0.001438"/>
     </inertial>
   </link>
   <joint name="FR_hip_joint" type="revolute">
@@ -266,7 +274,8 @@
     <child link="FR_gearbox_shoulder2"/>
     <origin rpy="1.5707963267948963 0 0" xyz="0 0 0.1"/>
     <axis xyz="0 -1 0"/>
-    <limit effort="45" lower="-1.57" upper="1.57" velocity="45"/>
+    <limit effort="55" lower="-1.57" upper="1.57" velocity="1.0"/>
+    <dynamics damping="0.9" friction="0.05"/>
   </joint>
   <link name="FR_gearbox_shoulder2">
     <visual>
@@ -285,8 +294,9 @@
       </geometry>
     </collision>
     <inertial>
+      <origin xyz="0 0 -0.0175"/>
       <mass value="0.95"/>
-      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+      <inertia ixx="0.001509" ixy="0.0" ixz="0.0" iyy="0.001509" iyz="0.0" izz="0.001438"/>
     </inertial>
   </link>
   <joint name="FR_thigh_joint" type="revolute">
@@ -294,7 +304,8 @@
     <child link="FR_upper_leg"/>
     <origin rpy="1.5707963267948963 0 -1.5707963267948966" xyz="0 0 -0.1205"/>
     <axis xyz="0 -1 0"/>
-    <limit effort="45" lower="-2.094395102" upper="1.047197551" velocity="45"/>
+    <limit effort="55" lower="-2.094395102" upper="1.047197551" velocity="1.0"/>
+    <dynamics damping="0.9" friction="0.05"/>
   </joint>
   <link name="FR_outer_gearbox">
     <visual>
@@ -313,8 +324,9 @@
       </geometry>
     </collision>
     <inertial>
+      <origin xyz="0 0 -0.0175"/>
       <mass value="0.95"/>
-      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+      <inertia ixx="0.001509" ixy="0.0" ixz="0.0" iyy="0.001509" iyz="0.0" izz="0.001438"/>
     </inertial>
   </link>
   <joint name="FR_shoulder_gearbox" type="fixed">
@@ -339,8 +351,9 @@
       </geometry>
     </collision>
     <inertial>
+      <origin xyz="0 0 0.15"/>
       <mass value="0.55"/>
-      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+      <inertia ixx="0.004327" ixy="0.0" ixz="0.0" iyy="0.004327" iyz="0.0" izz="0.000397"/>
     </inertial>
   </link>
   <joint name="FR_calf_joint" type="revolute">
@@ -348,7 +361,8 @@
     <child link="FR_lower_leg"/>
     <origin rpy="0 -1.5707963267948966 0" xyz="0 0 0.3"/>
     <axis xyz="0 -1 0"/>
-    <limit effort="45" lower="-0.5235987756" upper="1.047197551" velocity="45"/>
+    <limit effort="55" lower="-0.5235987756" upper="1.047197551" velocity="1.0"/>
+    <dynamics damping="0.9" friction="0.05"/>
   </joint>
   <link name="FR_lower_leg">
     <visual>
@@ -367,8 +381,9 @@
       </geometry>
     </collision>
     <inertial>
+      <origin xyz="0 0 0.15"/>
       <mass value="0.4"/>
-      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+      <inertia ixx="0.003068" ixy="0.0" ixz="0.0" iyy="0.003068" iyz="0.0" izz="0.000135"/>
     </inertial>
   </link>
   <joint name="FR_foot_fixed" type="revolute">
@@ -376,7 +391,7 @@
     <child link="FR_foot"/>
     <origin rpy="1.5707963267948966 0 0" xyz="0 0 0.3"/>
     <axis xyz="1 0 0"/>
-    <limit lower="0" upper="0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
   </joint>
   <link name="FR_foot">
     <visual>
@@ -426,7 +441,7 @@
     </collision>
     <inertial>
       <mass value="0.1"/>
-      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+      <inertia ixx="0.0000436" ixy="0.0" ixz="0.0" iyy="0.0000436" iyz="0.0" izz="0.000039"/>
     </inertial>
   </link>
   <joint name="RL_leg_connector" type="fixed">
@@ -450,7 +465,7 @@
     </collision>
     <inertial>
       <mass value="0.95"/>
-      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+      <inertia ixx="0.001509" ixy="0.0" ixz="0.0" iyy="0.001509" iyz="0.0" izz="0.001438"/>
     </inertial>
   </link>
   <joint name="RL_hip_joint" type="revolute">
@@ -458,7 +473,8 @@
     <child link="RL_gearbox_shoulder2"/>
     <origin rpy="1.5707963267948963 0 0" xyz="0 0 -0.1"/>
     <axis xyz="0 1 0"/>
-    <limit effort="45" lower="-1.57" upper="1.57" velocity="45"/>
+    <limit effort="55" lower="-1.57" upper="1.57" velocity="1.0"/>
+    <dynamics damping="0.9" friction="0.05"/>
   </joint>
   <link name="RL_gearbox_shoulder2">
     <visual>
@@ -477,8 +493,9 @@
       </geometry>
     </collision>
     <inertial>
+      <origin xyz="0 0 -0.0175"/>
       <mass value="0.95"/>
-      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+      <inertia ixx="0.001509" ixy="0.0" ixz="0.0" iyy="0.001509" iyz="0.0" izz="0.001438"/>
     </inertial>
   </link>
   <joint name="RL_thigh_joint" type="revolute">
@@ -486,7 +503,8 @@
     <child link="RL_upper_leg"/>
     <origin rpy="1.5707963267948963 0 1.5707963267948966" xyz="0 0 -0.1205"/>
     <axis xyz="0 1 0"/>
-    <limit effort="45" lower="-2.094395102" upper="1.047197551" velocity="45"/>
+    <limit effort="55" lower="-2.094395102" upper="1.047197551" velocity="1.0"/>
+    <dynamics damping="0.9" friction="0.05"/>
   </joint>
   <link name="RL_outer_gearbox">
     <visual>
@@ -505,8 +523,9 @@
       </geometry>
     </collision>
     <inertial>
+      <origin xyz="0 0 -0.0175"/>
       <mass value="0.95"/>
-      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+      <inertia ixx="0.001509" ixy="0.0" ixz="0.0" iyy="0.001509" iyz="0.0" izz="0.001438"/>
     </inertial>
   </link>
   <joint name="RL_shoulder_gearbox" type="fixed">
@@ -531,8 +550,9 @@
       </geometry>
     </collision>
     <inertial>
+      <origin xyz="0 0 0.15"/>
       <mass value="0.55"/>
-      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+      <inertia ixx="0.004327" ixy="0.0" ixz="0.0" iyy="0.004327" iyz="0.0" izz="0.000397"/>
     </inertial>
   </link>
   <joint name="RL_calf_joint" type="revolute">
@@ -540,7 +560,8 @@
     <child link="RL_lower_leg"/>
     <origin rpy="0 1.5707963267948966 0" xyz="0 0 0.3"/>
     <axis xyz="0 1 0"/>
-    <limit effort="45" lower="-0.5235987756" upper="1.047197551" velocity="45"/>
+    <limit effort="55" lower="-0.5235987756" upper="1.047197551" velocity="1.0"/>
+    <dynamics damping="0.9" friction="0.05"/>
   </joint>
   <link name="RL_lower_leg">
     <visual>
@@ -559,8 +580,9 @@
       </geometry>
     </collision>
     <inertial>
+      <origin xyz="0 0 0.15"/>
       <mass value="0.4"/>
-      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+      <inertia ixx="0.003068" ixy="0.0" ixz="0.0" iyy="0.003068" iyz="0.0" izz="0.000135"/>
     </inertial>
   </link>
   <joint name="RL_foot_fixed" type="revolute">
@@ -568,7 +590,7 @@
     <child link="RL_foot"/>
     <origin rpy="1.5707963267948966 0 0" xyz="0 0 0.3"/>
     <axis xyz="1 0 0"/>
-    <limit lower="0" upper="0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
   </joint>
   <link name="RL_foot">
     <visual>
@@ -618,7 +640,7 @@
     </collision>
     <inertial>
       <mass value="0.1"/>
-      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+      <inertia ixx="0.0000436" ixy="0.0" ixz="0.0" iyy="0.0000436" iyz="0.0" izz="0.000039"/>
     </inertial>
   </link>
   <joint name="RR_leg_connector" type="fixed">
@@ -642,7 +664,7 @@
     </collision>
     <inertial>
       <mass value="0.95"/>
-      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+      <inertia ixx="0.001509" ixy="0.0" ixz="0.0" iyy="0.001509" iyz="0.0" izz="0.001438"/>
     </inertial>
   </link>
   <joint name="RR_hip_joint" type="revolute">
@@ -650,7 +672,8 @@
     <child link="RR_gearbox_shoulder2"/>
     <origin rpy="1.5707963267948963 0 0" xyz="0 0 -0.1"/>
     <axis xyz="0 -1 0"/>
-    <limit effort="45" lower="-1.57" upper="1.57" velocity="45"/>
+    <limit effort="55" lower="-1.57" upper="1.57" velocity="1.0"/>
+    <dynamics damping="0.9" friction="0.05"/>
   </joint>
   <link name="RR_gearbox_shoulder2">
     <visual>
@@ -669,8 +692,9 @@
       </geometry>
     </collision>
     <inertial>
+      <origin xyz="0 0 -0.0175"/>
       <mass value="0.95"/>
-      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+      <inertia ixx="0.001509" ixy="0.0" ixz="0.0" iyy="0.001509" iyz="0.0" izz="0.001438"/>
     </inertial>
   </link>
   <joint name="RR_thigh_joint" type="revolute">
@@ -678,7 +702,8 @@
     <child link="RR_upper_leg"/>
     <origin rpy="1.5707963267948963 0 -1.5707963267948966" xyz="0 0 -0.1205"/>
     <axis xyz="0 -1 0"/>
-    <limit effort="45" lower="-2.094395102" upper="1.047197551" velocity="45"/>
+    <limit effort="55" lower="-2.094395102" upper="1.047197551" velocity="1.0"/>
+    <dynamics damping="0.9" friction="0.05"/>
   </joint>
   <link name="RR_outer_gearbox">
     <visual>
@@ -697,8 +722,9 @@
       </geometry>
     </collision>
     <inertial>
+      <origin xyz="0 0 -0.0175"/>
       <mass value="0.95"/>
-      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+      <inertia ixx="0.001509" ixy="0.0" ixz="0.0" iyy="0.001509" iyz="0.0" izz="0.001438"/>
     </inertial>
   </link>
   <joint name="RR_shoulder_gearbox" type="fixed">
@@ -723,8 +749,9 @@
       </geometry>
     </collision>
     <inertial>
+      <origin xyz="0 0 0.15"/>
       <mass value="0.55"/>
-      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+      <inertia ixx="0.004327" ixy="0.0" ixz="0.0" iyy="0.004327" iyz="0.0" izz="0.000397"/>
     </inertial>
   </link>
   <joint name="RR_calf_joint" type="revolute">
@@ -732,7 +759,8 @@
     <child link="RR_lower_leg"/>
     <origin rpy="0 -1.5707963267948966 0" xyz="0 0 0.3"/>
     <axis xyz="0 -1 0"/>
-    <limit effort="45" lower="-0.5235987756" upper="1.047197551" velocity="45"/>
+    <limit effort="55" lower="-0.5235987756" upper="1.047197551" velocity="1.0"/>
+    <dynamics damping="0.9" friction="0.05"/>
   </joint>
   <link name="RR_lower_leg">
     <visual>
@@ -751,8 +779,9 @@
       </geometry>
     </collision>
     <inertial>
+      <origin xyz="0 0 0.15"/>
       <mass value="0.4"/>
-      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+      <inertia ixx="0.003068" ixy="0.0" ixz="0.0" iyy="0.003068" iyz="0.0" izz="0.000135"/>
     </inertial>
   </link>
   <joint name="RR_foot_fixed" type="revolute">
@@ -760,7 +789,7 @@
     <child link="RR_foot"/>
     <origin rpy="1.5707963267948966 0 0" xyz="0 0 0.3"/>
     <axis xyz="1 0 0"/>
-    <limit lower="0" upper="0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
   </joint>
   <link name="RR_foot">
     <visual>
@@ -810,84 +839,143 @@
     </collision>
     <inertial>
       <mass value="0.1"/>
-      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+      <inertia ixx="0.0000436" ixy="0.0" ixz="0.0" iyy="0.0000436" iyz="0.0" izz="0.000039"/>
     </inertial>
   </link>
+  <link name="imu_link">
+    <inertial>
+      <mass value="0.01"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+    </inertial>
+  </link>
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0.1"/>
+  </joint>
+  <gazebo reference="imu_link">
+    <sensor name="imu_sensor" type="imu">
+      <update_rate>200.0</update_rate>
+      <always_on>1</always_on>
+      <visualize>true</visualize>
+      <imu>
+        <topic>imu</topic>
+        <angular_velocity>
+          <x>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>0.1</stddev>
+            </noise>
+          </x>
+          <y>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>0.1</stddev>
+            </noise>
+          </y>
+          <z>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>0.1</stddev>
+            </noise>
+          </z>
+        </angular_velocity>
+        <linear_acceleration>
+          <x>true</x>
+          <y>true</y>
+          <z>true</z>
+        </linear_acceleration>
+      </imu>
+    </sensor>
+  </gazebo>
   <ros2_control name="IgnitionSystem" type="system">
     <hardware>
       <plugin>ign_ros2_control/IgnitionSystem</plugin>
     </hardware>
-    <joint name="front_left_shoulder_connector">
+    <joint name="FL_hip_joint">
       <command_interface name="position"/>
       <command_interface name="velocity"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
+      <state_interface name="effort"/>
     </joint>
-    <joint name="front_left_shoulder_leg">
+    <joint name="FL_thigh_joint">
       <command_interface name="position"/>
       <command_interface name="velocity"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
+      <state_interface name="effort"/>
     </joint>
-    <joint name="front_left_knee">
+    <joint name="FL_calf_joint">
       <command_interface name="position"/>
       <command_interface name="velocity"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
+      <state_interface name="effort"/>
     </joint>
-    <joint name="front_right_shoulder_connector">
+    <joint name="FR_hip_joint">
       <command_interface name="position"/>
       <command_interface name="velocity"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
+      <state_interface name="effort"/>
     </joint>
-    <joint name="front_right_shoulder_leg">
+    <joint name="FR_thigh_joint">
       <command_interface name="position"/>
       <command_interface name="velocity"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
+      <state_interface name="effort"/>
     </joint>
-    <joint name="front_right_knee">
+    <joint name="FR_calf_joint">
       <command_interface name="position"/>
       <command_interface name="velocity"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
+      <state_interface name="effort"/>
     </joint>
-    <joint name="rear_left_shoulder_connector">
+    <joint name="RL_hip_joint">
       <command_interface name="position"/>
       <command_interface name="velocity"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
+      <state_interface name="effort"/>
     </joint>
-    <joint name="rear_left_shoulder_leg">
+    <joint name="RL_thigh_joint">
       <command_interface name="position"/>
       <command_interface name="velocity"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
+      <state_interface name="effort"/>
     </joint>
-    <joint name="rear_left_knee">
+    <joint name="RL_calf_joint">
       <command_interface name="position"/>
       <command_interface name="velocity"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
+      <state_interface name="effort"/>
     </joint>
-    <joint name="rear_right_shoulder_connector">
+    <joint name="RR_hip_joint">
       <command_interface name="position"/>
       <command_interface name="velocity"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
+      <state_interface name="effort"/>
     </joint>
-    <joint name="rear_right_shoulder_leg">
+    <joint name="RR_thigh_joint">
       <command_interface name="position"/>
       <command_interface name="velocity"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
+      <state_interface name="effort"/>
     </joint>
-    <joint name="rear_right_knee">
+    <joint name="RR_calf_joint">
       <command_interface name="position"/>
       <command_interface name="velocity"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
+      <state_interface name="effort"/>
     </joint>
   </ros2_control>
   <gazebo>
@@ -896,18 +984,7 @@
       <robot_param_node>robot_state_publisher</robot_param_node>
       <parameters>/home/v/Dev/Github/Cerberus/Control/cerberus_ws/install/cerberus_bringup/share/cerberus_bringup/config/cerberus.yaml</parameters>
     </plugin>
-  </gazebo>
-  <gazebo reference="base_link">
-    <sensor name="imu_sensor" type="imu">
-      <!-- Typically you need some sub-elements under <imu> -->
-      <update_rate>50</update_rate>
-      <always_on>true</always_on>
-      <visualize>true</visualize>
-      <topic>imu</topic>
-      <imu>
-        <noise type="none"/>
-        <!-- or define noise parameters here -->
-      </imu>
-    </sensor>
+    <plugin filename="libignition-gazebo-imu-system.so" name="ignition::gazebo::systems::Imu">
+        </plugin>
   </gazebo>
 </robot>

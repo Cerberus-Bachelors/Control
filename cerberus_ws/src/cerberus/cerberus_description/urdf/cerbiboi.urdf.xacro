@@ -3,8 +3,8 @@
 
     <xacro:include filename="$(find cerberus_description)/urdf/leg_macro.xacro" />
 
-    <xacro:arg name="effort" default="55" />
-    <xacro:arg name="max_joint_velocity" default="1.0" />
+    <xacro:arg name="effort" default="40" />
+    <xacro:arg name="max_joint_velocity" default="2.0" />
 
     <!--
     <link name="world" />

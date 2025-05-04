@@ -22,10 +22,17 @@ private:
   float* hostInput_;
   float* hostOutput_;
 
+  #if NV_TENSORRT_MAJOR < 9
+  static constexpr int MAX_BINDINGS = 16;
+  void* bindings_[MAX_BINDINGS]{};
+  #endif
+
+
 public:
   void bindBuffers(nvinfer1::ICudaEngine *engine, nvinfer1::IExecutionContext *context, const char *inputName, const char *outputName);
   void updateInputBuffer(std::array<float, 45> &input);
   void updateOutputBuffer();
+  void** bindings(); //ignore if using tensorrt 10
   std::vector<double> getOutput() const;
   BufferManager();
   ~BufferManager();

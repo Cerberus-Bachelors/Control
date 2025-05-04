@@ -124,25 +124,29 @@ bool Inference::init(const char *modelFile)
   }
 
   nvinfer1::IBuilderConfig *config = builder->createBuilderConfig();
+  
   // Resource limit
   config->setMemoryPoolLimit(nvinfer1::MemoryPoolType::kWORKSPACE, 1U << 20);
-  config->setMemoryPoolLimit(nvinfer1::MemoryPoolType::kTACTIC_SHARED_MEMORY, 48 << 10);
+
+  #if NV_TENSORRT_MAJOR >= 8 && NV_TENSORRT_MINOR >= 2
+  config->setMemoryPoolLimit(nvinfer1::MemoryPoolType::kTACTIC_SHARED_MEMORY, 2 << 20);
+  #endif
 
   nvinfer1::IHostMemory *serializedModel = builder->buildSerializedNetwork(*network, *config);
 
-  // Print input names
-  for (int i = 0; i < network->getNbInputs(); ++i)
-  {
-    auto input = network->getInput(i);
-    std::cout << "Input " << i << " name: " << input->getName() << std::endl;
-  }
+  // // Print input names
+  // for (int i = 0; i < network->getNbInputs(); ++i)
+  // {
+  //   auto input = network->getInput(i);
+  //   std::cout << "Input " << i << " name: " << input->getName() << std::endl;
+  // }
 
-  // Print output names
-  for (int i = 0; i < network->getNbOutputs(); ++i)
-  {
-    auto output = network->getOutput(i);
-    std::cout << "Output " << i << " name: " << output->getName() << std::endl;
-  }
+  // // Print output names
+  // for (int i = 0; i < network->getNbOutputs(); ++i)
+  // {
+  //   auto output = network->getOutput(i);
+  //   std::cout << "Output " << i << " name: " << output->getName() << std::endl;
+  // }
 
   delete parser;
   delete network;
@@ -165,14 +169,15 @@ bool Inference::init(const char *modelFile)
 
 bool Inference::infer()
 {
+#if NV_TENSORRT_MAJOR >= 9
   context_->enqueueV3(stream_);
-
+#else
+  context_->enqueueV2(bufferManager_.bindings(), stream_, nullptr);
+#endif
   cudaStreamSynchronize(stream_);
-
   bufferManager_.updateOutputBuffer();
-  return false;
+  return true;
 }
-
 int main(int argc, char **argv)
 {
   rclcpp::init(argc, argv);

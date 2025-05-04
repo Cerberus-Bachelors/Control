@@ -17,8 +17,14 @@ find_package(Eigen3 REQUIRED)
 
 
 # Set paths to TensorRT includes and libraries
+
+if(CMAKE_HOST_SYSTEM_PROCESSOR MATCHES "x86_64")
 include_directories(/usr/include/x86_64-linux-gnu)
 link_directories(/usr/lib/x86_64-linux-gnu)
+elseif(CMAKE_HOST_SYSTEM_PROCESSOR MATCHES "aarch64")
+include_directories(/usr/include/aarch64-linux-gnu)
+link_directories(/usr/lib/aarch64-linux-gnu)
+endif()
 
 # uncomment the following section in order to fill in
 # further dependencies manually.

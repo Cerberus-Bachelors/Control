@@ -24,6 +24,8 @@ link_directories(/usr/lib/x86_64-linux-gnu)
 elseif(CMAKE_HOST_SYSTEM_PROCESSOR MATCHES "aarch64")
 include_directories(/usr/include/aarch64-linux-gnu)
 link_directories(/usr/lib/aarch64-linux-gnu)
+include_directories(/usr/local/cuda-12.6/include)
+link_directories(/usr/local/cuda-12.6/lib64)
 endif()
 
 # uncomment the following section in order to fill in

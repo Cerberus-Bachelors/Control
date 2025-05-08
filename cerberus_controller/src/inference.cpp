@@ -27,7 +27,7 @@ class Inference : public rclcpp::Node
 public:
   Inference() : Node("Inference")
   {
-    if (init("/home/v/Dev/Github/Cerberus/Control/cerberus_ws/cerberus_isaac/models/Stiffer_Blind.onnx"))
+    if (init("/home/cerberus/Workspaces/cerberus_ws/src/Control/cerberus_controller/onnx/Stiffer_Blind.onnx"))
     {
       subscription_ = this->create_subscription<cerberus_msgs::msg::CerberusObservationTensor>("cerberus/tensor_input", 10, std::bind(&Inference::updateInput, this, _1));
       publisher_ = this->create_publisher<std_msgs::msg::Float64MultiArray>("cerberus/actions", 10);

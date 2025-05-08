@@ -40,8 +40,6 @@ public:
   bool init(const char *modelFile);
   bool infer();
   
-  // bool infer();
-  
   private:
   void ControlUpdate(){
     

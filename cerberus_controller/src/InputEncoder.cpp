@@ -46,31 +46,11 @@ public:
 private:
     void imuCallback(const sensor_msgs::msg::Imu::SharedPtr msg)
     {
-
-        // prevTime_ = currentTime_;
-        // currentTime_ = msg->header.stamp;
-        // if (prevTime_.nanoseconds() == 0)
-        // {
-        //     return;
-        // }
-
-        tensor_.base_ang_vel = msg->angular_velocity;
+        tensor.lin_acc = msg->linear_acceleration;
+        tensor_.ang_vel = msg->angular_velocity;
 
         Eigen::Quaterniond orientation(msg->orientation.w, msg->orientation.x, msg->orientation.y, msg->orientation.z);
         Eigen::Vector3d proj_g = orientation * grav_;
-
-        // auto dt = currentTime_ - prevTime_;
-        // auto dtSec = dt.nanoseconds() * 1e-9;
-
-        //Eigen::Vector3d lin_accel(msg->linear_acceleration.x, msg->linear_acceleration.y, msg->linear_acceleration.z);
-
-        // Eigen::Vector3d corrected = lin_accel; //*9.81;
-
-        // // std::cout << "------" << std::endl << corrected << std::endl<< "---" << std::endl <<  lin_accel << std::endl << "------" << std::endl;
-
-        // tensor_.base_lin_vel.x = tensor_.base_lin_vel.x + corrected(0) * dtSec;
-        // tensor_.base_lin_vel.y = tensor_.base_lin_vel.y + corrected(1) * dtSec;
-        // tensor_.base_lin_vel.z = tensor_.base_lin_vel.z + corrected(2) * dtSec;
 
         tensor_.proj_grav.x = proj_g(0);
         tensor_.proj_grav.y = proj_g(1);

@@ -25,21 +25,30 @@ void BufferManager::bindBuffers(nvinfer1::ICudaEngine* engine, nvinfer1::IExecut
 {
 #if NV_TENSORRT_MAJOR >= 9
   // TensorRT 9+ : use name-based APIs
+  std::cout << "Buffer" << std::endl;
   auto inputDataType = engine->getTensorDataType(inputName);
   auto inputDims = engine->getTensorShape(inputName);
   context->setInputShape(inputName, inputDims);
-#else
+  std::cout << "Buffer2" << std::endl;
+
+  #else
   // TensorRT 8: use index-based APIs
   int inputIndex = engine->getBindingIndex(inputName);
   if (inputIndex < 0) throw std::runtime_error("Invalid input name");
-
+  
   auto inputDims = engine->getBindingDimensions(inputIndex);
   auto inputDataType = engine->getBindingDataType(inputIndex);
-#endif
+  #endif
+  
+  std::cout << "Buffer4" << std::endl;
 
   inputSize_ = 1;
   for (int i = 0; i < inputDims.nbDims; ++i)
+  {
+    std::cout << "Buffer Loop:" << i << std::endl;
     inputSize_ *= inputDims.d[i];
+  }
+  std::cout << "Setting input to size:" << inputSize_ << std::endl;
 
   switch (inputDataType)
   {
@@ -93,7 +102,7 @@ void BufferManager::bindBuffers(nvinfer1::ICudaEngine* engine, nvinfer1::IExecut
 #endif
 }
 
-void BufferManager::updateInputBuffer(std::array<float, 45>& input)
+void BufferManager::updateInputBuffer(std::array<float, 48>& input)
 {
   for (size_t i = 0; i < inputSize_; ++i)
     hostInput_[i] = input[i];

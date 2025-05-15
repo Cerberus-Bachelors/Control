@@ -30,7 +30,7 @@ private:
 
 public:
   void bindBuffers(nvinfer1::ICudaEngine *engine, nvinfer1::IExecutionContext *context, const char *inputName, const char *outputName);
-  void updateInputBuffer(std::array<float, 45> &input);
+  void updateInputBuffer(std::array<float, 48> &input);
   void updateOutputBuffer();
   void** bindings(); //ignore if using tensorrt 10
   std::vector<double> getOutput() const;

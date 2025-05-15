@@ -34,6 +34,13 @@ def generate_launch_description():
         )
     )
 
+    declared_arguments.append(
+        DeclareLaunchArgument(
+            "effort_controller",
+            default_value="group_effort_controller",
+        )
+    )
+
     bringup = get_package_share_directory('cerberus_bringup')
     gazebo = get_package_share_directory('cerberus_gazebo')
     description = get_package_share_directory('cerberus_description')
@@ -47,6 +54,8 @@ def generate_launch_description():
 
     joint_controller = LaunchConfiguration("joint_controller")
     pos_controller = LaunchConfiguration("pos_controller")
+    effort_controller = LaunchConfiguration("effort_controller")
+
 
     urdf = xacro.process_file(robot_desc_path).toxml()
 
@@ -118,6 +127,27 @@ def generate_launch_description():
         arguments=[pos_controller, "-c", "/controller_manager"],
     )
 
+    effort_controller_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=[effort_controller, "-c", "/controller_manager"],
+    )
+
+
+    infer = Node(
+        package='cerberus_controller',
+        executable='inference',
+        name='inference',
+        output='both',
+    )
+
+    input_handler = Node(
+       package='cerberus_controller',
+       executable='input_encoder',
+       name='input_encoder',
+       output='both',
+    )
+
     nodes = [
         gz_sim,
         spawn_robot,
@@ -126,8 +156,10 @@ def generate_launch_description():
         bridge,
         robot_state_publisher,
         rviz,
-        pos_controller_spawner,
+        effort_controller_spawner,
         joint_state_broadcaster_spawner,
+        #input_handler,
+        #infer,
     ]
 
     return LaunchDescription(declared_arguments + nodes)

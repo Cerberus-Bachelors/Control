@@ -156,7 +156,7 @@ def generate_launch_description():
         bridge,
         robot_state_publisher,
         rviz,
-        effort_controller_spawner,
+        pos_controller_spawner,
         joint_state_broadcaster_spawner,
         #input_handler,
         #infer,

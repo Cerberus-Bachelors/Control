@@ -32,7 +32,7 @@ public:
       subscription_ = this->create_subscription<cerberus_msgs::msg::CerberusObservationTensor>("cerberus/tensor_input", 10, std::bind(&Inference::updateInput, this, _1));
       publisher_ = this->create_publisher<std_msgs::msg::Float64MultiArray>("cerberus/actions", 10);
       controlPublish_ = this->create_publisher<std_msgs::msg::Float64MultiArray>("group_position_controller/commands", 10);
-      controlTimer_ = this->create_wall_timer(0.02s, std::bind(&Inference::ControlUpdate, this));
+      //controlTimer_ = this->create_wall_timer(0.02s, std::bind(&Inference::ControlUpdate, this));
       actions_ = std_msgs::msg::Float64MultiArray();
     }
   }
@@ -41,7 +41,7 @@ public:
   bool infer();
   
   private:
-  void ControlUpdate(){
+  void controlUpdate(){
     
     publisher_->publish(actions_);
     for (auto &action : actions_.data)
@@ -88,10 +88,7 @@ public:
 
     actions_.data = bufferManager_.getOutput();
     
-    //for (size_t i = 4; i <= 11 && i < actions.data.size(); ++i)
-    //{
-    //  actions.data[i] = -actions.data[i];
-    //}    
+    controlUpdate();
   }
 
   std::array<float, 48> inputTensor_;

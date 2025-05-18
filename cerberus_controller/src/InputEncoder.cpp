@@ -3,6 +3,7 @@
 #include "sensor_msgs/msg/imu.hpp"
 #include <builtin_interfaces/msg/time.hpp>
 #include "cerberus_msgs/msg/cerberus_observation_tensor.hpp"
+#include "cerberus_msgs/msg/sensor_data.hpp"
 #include "std_msgs/msg/float64_multi_array.hpp"
 #include "sensor_msgs/msg/joint_state.hpp"
 #include <chrono>
@@ -37,30 +38,43 @@ public:
             "joint_states", 10, std::bind(&InputEncoder::jointCallback, this, _1));
 
         tensorPublisher_ = this->create_publisher<cerberus_msgs::msg::CerberusObservationTensor>("cerberus/tensor_input", 10);
-        tensorTimer_ = this->create_wall_timer(0.005s, std::bind(&InputEncoder::tensorPublish, this));
+        tensorTimer_ = this->create_wall_timer(0.02s, std::bind(&InputEncoder::tensorPublish, this));
 
-        /*sensorSubscription_ = this->create_subscription<std_msgs::msg::String>(
-            "sensors_data", 10, std::bind(&InputEncoder::imuCallback, this, _1));*/
+        /*sensorSubscription_ = this->create_subscription<cerberus_msgs::msg::SensorData>(
+            "sensors_data", 10, std::bind(&InputEncoder::sensorCallback, this, _1));*/
         std::cout << "Test " << 2 << std::endl;
     }
 
 private:
     void imuCallback(const sensor_msgs::msg::Imu::SharedPtr msg)
     {
-        std::cout << "Test " << 3 << std::endl;
-
         tensor_.lin_acc = msg->linear_acceleration;
         tensor_.ang_vel = msg->angular_velocity;
-        std::cout << "Test " << 4 << std::endl;
 
         Eigen::Quaterniond orientation(msg->orientation.w, msg->orientation.x, msg->orientation.y, msg->orientation.z);
-        Eigen::Vector3d proj_g = orientation * grav_;
-        std::cout << "Test " << 5 << std::endl;
+        Eigen::Vector3d proj_g = orientation.inverse() * grav_;
 
         tensor_.proj_grav.x = proj_g(0);
         tensor_.proj_grav.y = proj_g(1);
         tensor_.proj_grav.z = proj_g(2);
+    }
 
+    void sensorCallback(const cerberus_msgs::msg::SensorData::SharedPtr msg)
+    {
+        tensor_.lin_acc.x = msg->accel_x;
+        tensor_.lin_acc.y = msg->accel_y;
+        tensor_.lin_acc.z = msg->accel_z;
+
+        tensor_.ang_vel.x = msg->gyro_x;;
+        tensor_.ang_vel.y = msg->gyro_y;;
+        tensor_.ang_vel.z = msg->gyro_z;;
+
+        Eigen::Quaterniond orientation(1, 0, 0, 0);
+        Eigen::Vector3d proj_g = orientation.inverse() * grav_;
+
+        tensor_.proj_grav.x = proj_g(0);
+        tensor_.proj_grav.y = proj_g(1);
+        tensor_.proj_grav.z = proj_g(2);
     }
 
     void commandCallback(const geometry_msgs::msg::Vector3::SharedPtr msg)

@@ -197,6 +197,8 @@ def generate_launch_description():
     input_handler = Node(
        package='cerberus_controller',
        executable='input_encoder',
+       name='input_encoder',
+       output='both',
     )
 
     robot_description_content = Command(
@@ -302,8 +304,8 @@ def generate_launch_description():
         robot_state_pub_node,
         joint_state_broadcaster_spawner,
         group_controller_spawner,
-        #infer,
-        #input_handler
+        infer,
+        input_handler
     ]
 
     return LaunchDescription(declared_arguments + nodes)

@@ -27,6 +27,7 @@ class Inference : public rclcpp::Node
 public:
   Inference() : Node("Inference")
   {
+    auto init_t1 = high_resolution_clock::now();
     if (init("/home/v/Dev/Github/Cerberus/src/Isaac/models/256-32/exported/policy.onnx"))
     {
       subscription_ = this->create_subscription<cerberus_msgs::msg::CerberusObservationTensor>("cerberus/tensor_input", 10, std::bind(&Inference::updateInput, this, _1));
@@ -35,6 +36,9 @@ public:
       //controlTimer_ = this->create_wall_timer(0.02s, std::bind(&Inference::ControlUpdate, this));
       actions_ = std_msgs::msg::Float64MultiArray();
     }
+    auto init_t2 = high_resolution_clock::now();
+    auto duration = duration_cast<microseconds>(init_t2 - init_t1);
+    std::cout << Initialization time: << duration.count() << std::endl;
   }
 
   bool init(const char *modelFile);
@@ -116,27 +120,21 @@ bool Inference::init(const char *modelFile)
   auto parser = nvonnxparser::createParser(*network, logger);
 
 
-  std::cout << "Test1" << std::endl;
   parser->parseFromFile(modelFile, static_cast<int32_t>(nvinfer1::ILogger::Severity::kWARNING));
   for (int32_t i = 0; i < parser->getNbErrors(); ++i)
   {
     RCLCPP_ERROR(this->get_logger(), parser->getError(i)->desc());
   }
-  std::cout << "Test2" << std::endl;
   nvinfer1::IBuilderConfig *config = builder->createBuilderConfig();
-  std::cout << "Test3" << std::endl;
   
   // Resource limit
   config->setMemoryPoolLimit(nvinfer1::MemoryPoolType::kWORKSPACE, 1U << 20);
-  std::cout << "Test4" << std::endl;
 
   #if NV_TENSORRT_MAJOR >= 8 && NV_TENSORRT_MINOR >= 2
   config->setMemoryPoolLimit(nvinfer1::MemoryPoolType::kTACTIC_SHARED_MEMORY, 2 << 20);
   #endif
-  std::cout << "Test5" << std::endl;
 
   nvinfer1::IHostMemory *serializedModel = builder->buildSerializedNetwork(*network, *config);
-  std::cout << "Test6" << std::endl;
 
   // // Print input names
   // for (int i = 0; i < network->getNbInputs(); ++i)
@@ -146,11 +144,11 @@ bool Inference::init(const char *modelFile)
   // }
 
   // Print output names
-  for (int i = 0; i < network->getNbOutputs(); ++i)
-  {
-    auto output = network->getOutput(i);
-    std::cout << "Output " << i << " name: " << output->getName() << std::endl;
-  }
+  //for (int i = 0; i < network->getNbOutputs(); ++i)
+  //{
+  //  auto output = network->getOutput(i);
+  //  std::cout << "Output " << i << " name: " << output->getName() << std::endl;
+  //}
 
   delete parser;
   delete network;

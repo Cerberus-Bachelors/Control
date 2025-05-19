@@ -27,8 +27,8 @@ class Inference : public rclcpp::Node
 public:
   Inference() : Node("Inference")
   {
-    auto init_t1 = high_resolution_clock::now();
-    if (init("/home/v/Dev/Github/Cerberus/src/Isaac/models/256-32/exported/policy.onnx"))
+    auto init_t1 = std::chrono::high_resolution_clock::now();
+    if (init("/home/cerberus/Git/Isaac/models/256-32/exported/policy.onnx"))
     {
       subscription_ = this->create_subscription<cerberus_msgs::msg::CerberusObservationTensor>("cerberus/tensor_input", 10, std::bind(&Inference::updateInput, this, _1));
       publisher_ = this->create_publisher<std_msgs::msg::Float64MultiArray>("cerberus/actions", 10);
@@ -36,9 +36,9 @@ public:
       //controlTimer_ = this->create_wall_timer(0.02s, std::bind(&Inference::ControlUpdate, this));
       actions_ = std_msgs::msg::Float64MultiArray();
     }
-    auto init_t2 = high_resolution_clock::now();
-    auto duration = duration_cast<microseconds>(init_t2 - init_t1);
-    std::cout << Initialization time: << duration.count() << std::endl;
+    auto init_t2 = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(init_t2 - init_t1);
+    std::cout << "Initialization time: "<< duration.count() << std::endl;
   }
 
   bool init(const char *modelFile);

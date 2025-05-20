@@ -59,6 +59,8 @@ public:
   }
   void updateInput(const cerberus_msgs::msg::CerberusObservationTensor::SharedPtr msg)
   {
+	  
+    auto inf_t1 = std::chrono::high_resolution_clock::now();
     size_t idx = 0;
     auto append_vec3 = [&](const geometry_msgs::msg::Vector3 &v)
     {
@@ -93,6 +95,9 @@ public:
     actions_.data = bufferManager_.getOutput();
     
     controlUpdate();
+    auto inf_t2 = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(inf_t2 - inf_t1);
+    std::cout << "Initialization time: "<< duration.count() << std::endl;
   }
 
   std::array<float, 48> inputTensor_;
